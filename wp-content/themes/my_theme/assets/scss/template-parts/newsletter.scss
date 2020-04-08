@@ -1,0 +1,50 @@
+.newsletter {
+    width: 100%;
+    float: left;
+    background-color: $secondary-colour;
+    padding: rem-calc(30 0);
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @include breakpoint(medium down) {
+            justify-content: center;
+        }
+    }
+
+    &__text {
+        width: rem-calc(334);
+        padding: rem-calc(0 15);
+
+        @include breakpoint(medium down) {
+            width: 100%;
+            margin-bottom: rem-calc(30);
+            text-align: center;
+        }
+    }
+
+    &__title {
+        font-family: $primary;
+        color: #fff;
+        font-size: rem-calc(30);
+        line-height: rem-calc(30);
+        margin-bottom: rem-calc(3px);
+
+        @include breakpoint(medium down) {
+            font-size: rem-calc(25);
+            line-height: rem-calc(25);
+        }
+    }
+
+    &__subtitle {
+        font-family: $body;
+        color: #fff;
+        font-size: rem-calc(18);
+        line-height: rem-calc(18);
+        font-style: italic;
+    }
+}

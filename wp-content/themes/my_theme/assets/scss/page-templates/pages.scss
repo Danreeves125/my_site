@@ -1,0 +1,824 @@
+.page {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__hero {
+        width: 100%;
+        background: rgb(81,214,255);
+        background: linear-gradient(45deg, rgba(81,214,255,1) 0%, rgba(97,125,255,1) 100%);
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-content: flex-end;
+            flex-wrap: wrap;
+            height: 100%;
+            min-height: rem-calc(350);
+
+            @include breakpoint(small only) {
+                min-height: rem-calc(250);
+                padding-top: rem-calc(75);
+                align-content: center;
+                margin-top: rem-calc(15);
+            }
+        }
+    }
+
+    &__section {
+        width: 100%;
+        padding: rem-calc(40 0);
+
+        @include breakpoint(small only) {
+            padding: rem-calc(30 0);
+        }
+
+        &--no-p {
+            padding: 0;
+        }
+
+        &--gallery {
+            @include breakpoint(small only) {
+                padding: rem-calc(30 0 15 0);
+            }
+        }
+
+        &--grey {
+            background-color: $light-grey;
+        }
+
+        &--p-sm {
+            padding: rem-calc(15 0);
+        }
+    }
+
+    &__hero-content {
+        width: 100%;
+        padding-bottom: rem-calc(30);
+    }
+
+    &__title {
+        width: 100%;
+        text-align: center;
+        font-family: $primary;
+        color: #fff;
+        font-size: rem-calc(45);
+        line-height: rem-calc(50);
+        text-transform: uppercase;
+        font-weight: 600;
+        text-shadow: 0 3px 16px rgba(#000, 0.16);
+        padding: rem-calc(0 15 19 15);
+        margin-bottom: rem-calc(15);
+        position: relative;
+
+        @include breakpoint(medium only) {
+            font-size: rem-calc(35);
+            line-height: rem-calc(40);
+        }
+
+        @include breakpoint(small only) {
+            font-size: rem-calc(30);
+            line-height: rem-calc(35);
+            padding-bottom: 0;
+            margin: 0;
+        }
+
+        &:before {
+            content: '';
+            height: rem-calc(4);
+            width: rem-calc(70);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+
+            @include breakpoint(small only) {
+                display: none;
+            }
+        }
+    }
+
+    &__text-top {
+        width: rem-calc(750);
+        text-align: center;
+        @include center(true, false);
+        position: relative;
+        margin-bottom: rem-calc(45);
+
+        @include breakpoint(750 down) {
+            width: 100%;
+            padding: rem-calc(0 15);
+            margin-bottom: rem-calc(30);
+        }
+    }
+
+    &__text {
+        width: 100%;
+        padding: rem-calc(0 15);
+
+        &--center {
+            text-align: center;
+            margin-bottom: rem-calc(30);
+        }
+    }
+
+    &__blocks {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__block {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        @include breakpoint(small only) {
+            flex-wrap: wrap;
+        }
+
+        &:nth-child(even) {
+            .half {
+
+                &:nth-of-type(2) {
+                    order: -1;
+
+                    @include breakpoint(small only) {
+                        order: 1;
+                    }
+                }
+            }
+        }
+
+        .half {
+            width: 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            min-height: rem-calc(500);
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            @include breakpoint(small only) {
+                width: 100%;
+                min-height: rem-calc(400);
+            }
+
+
+            &:nth-of-type(2) {
+                padding: rem-calc(30 50);
+
+                @include breakpoint(small only) {
+                    padding: rem-calc(30 15);
+                }
+            }
+        }
+    }
+
+    &__banner {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: rem-calc(0 15);
+
+        @include breakpoint(small only) {
+            flex-wrap: wrap;
+        }
+
+        p {
+            font-family: $primary;
+            font-size: rem-calc(20);
+            line-height: rem-calc(22);
+            font-weight: 600;
+            padding-right: rem-calc(30);
+            margin: 0;
+
+            @include breakpoint(700 down) {
+                width: 70%;
+            }
+
+            @include breakpoint(small only) {
+                width: 100%;
+                margin-bottom: rem-calc(15);
+                padding: 0;
+                text-align: center;
+            }
+        }
+    }
+
+    &__subtitle {
+        width: 100%;
+        text-align: center;
+        font-family: $primary;
+        color: $jet;
+        font-size: rem-calc(30);
+        line-height: rem-calc(35);
+        font-weight: 600;
+        margin-bottom: rem-calc(15);
+    }
+
+    &__form {
+        width: 90%;
+        @include center(true, false);
+        position: relative;
+
+        @include breakpoint(small only) {
+            width: 100%;
+            padding: rem-calc(0 15);
+        }
+    }
+}
+//.page {
+//    width: 100%;
+//    float: left;
+//
+//    &--padding {
+//        padding: rem-calc(30 0);
+//
+//        @include breakpoint(small only) {
+//            padding: rem-calc(30 0 15 0);
+//        }
+//    }
+//
+//    &__section {
+//        width: 100%;
+//        float: left;
+//        padding: rem-calc(30 0);
+//
+//        @include breakpoint(small only) {
+//            padding: rem-calc(15 0);
+//        }
+//
+//        &--grey {
+//            background-color: $light-grey;
+//        }
+//    }
+//
+//    &__left {
+//        @include grid-column(7);
+//
+//        @include breakpoint(medium only) {
+//            @include grid-column(6);
+//        }
+//
+//        @include breakpoint(small only) {
+//            @include grid-column(12);
+//            margin-bottom: rem-calc(15);
+//        }
+//
+//        &--no-padding {
+//            padding: 0;
+//        }
+//
+//        &--full-width {
+//            width: 100%;
+//        }
+//    }
+//
+//    &__right {
+//        @include grid-column(5);
+//
+//        @include breakpoint(medium only) {
+//            @include grid-column(6);
+//        }
+//
+//        @include breakpoint(small only) {
+//            @include grid-column(12);
+//        }
+//    }
+//
+//    &__title {
+//        width: 100%;
+//        float: left;
+//        font-family: $primary;
+//        color: $jet;
+//        font-size: rem-calc(40);
+//        line-height: rem-calc(40);
+//        margin: rem-calc(0 0 15 0);
+//        padding: 0;
+//
+//        @include breakpoint(small only) {
+//            font-size: rem-calc(30);
+//            line-height: rem-calc(25);
+//        }
+//
+//        &--desktop {
+//            @include hide-for-only(small);
+//        }
+//
+//        &--mobile {
+//            @include show-for-only(small);
+//            padding-left: rem-calc(15);
+//        }
+//
+//        &--center {
+//            text-align: center;
+//        }
+//    }
+//
+//    &__text {
+//        width: 100%;
+//        float: left;
+//
+//        h1, h2, h3, h4, h5, h6 {
+//            font-family: $body;
+//            color: $jet;
+//            font-size: rem-calc(20);
+//            line-height: rem-calc(20);
+//            font-weight: bold;
+//        }
+//
+//         p, li{
+//             font-family: $body;
+//             color: $jet;
+//             font-size: rem-calc(16);
+//             line-height: rem-calc(22);
+//         }
+//
+//        &--center {
+//            width: rem-calc(640);
+//            @include center(true, false);
+//            position: relative;
+//            text-align: center;
+//        }
+//    }
+//
+//    &__text-top {
+//        width: 100%;
+//        padding: rem-calc(0 15);
+//        text-align: center;
+//        margin-bottom: rem-calc(30);
+//
+//        p {
+//            font-family: $body;
+//            color: $jet;
+//            font-size: rem-calc(16);
+//            line-height: rem-calc(22);
+//
+//            &:last-of-type {
+//                margin-bottom: 0;
+//            }
+//        }
+//
+//        &--smaller {
+//            width: rem-calc(800);
+//            float: left;
+//            @include center(true, false);
+//            position: relative;
+//
+//            @include breakpoint(800 down) {
+//                @include grid-column(12);
+//            }
+//        }
+//
+//        &--mb {
+//            margin-bottom: rem-calc(30);
+//        }
+//    }
+//
+//    &__list {
+//        @include grid-column(12);
+//        list-style: none;
+//        margin: 0;
+//    }
+//
+//    &__list-item {
+//        width: 100%;
+//        float: left;
+//        position: relative;
+//        padding: rem-calc(25 0);
+//
+//        &:before {
+//            content: '';
+//            width: 100%;
+//            float: left;
+//            height: rem-calc(2);
+//            position: absolute;
+//            left: 0;
+//            background-image: linear-gradient(to right, darken($grey, 10%) 33%, rgba(255,255,255,0) 0%);
+//            background-position: bottom;
+//            background-size: 6px 2px;
+//            background-repeat: repeat-x;
+//        }
+//
+//        &:before {
+//            top: 0;
+//        }
+//
+//        &:last-of-type {
+//            &:after {
+//                content: '';
+//                width: 100%;
+//                float: left;
+//                height: rem-calc(2);
+//                position: absolute;
+//                left: 0;
+//                bottom: 0;
+//                background-image: linear-gradient(to right, darken($grey, 10%) 33%, rgba(255,255,255,0) 0%);
+//                background-position: bottom;
+//                background-size: 6px 2px;
+//                background-repeat: repeat-x;
+//            }
+//        }
+//    }
+//
+//    &__image {
+//        width: 30%;
+//        float: left;
+//        padding-right: rem-calc(15);
+//
+//        @include breakpoint(920 down) {
+//            width: 40%;
+//        }
+//
+//        @include breakpoint(565 down) {
+//            width: 100%;
+//            padding: 0;
+//            margin-bottom: rem-calc(15);
+//        }
+//
+//        &--mb {
+//            margin-bottom: rem-calc(15);
+//        }
+//
+//    }
+//
+//    &__logo {
+//        width: 100%;
+//        float: left;
+//        border: 1px solid $jet;
+//        position: relative;
+//        height: rem-calc(200);
+//
+//        img {
+//            max-width: rem-calc(230);
+//            max-height: rem-calc(230);
+//            @include center(true, true);
+//
+//            @include breakpoint(730 down) {
+//                max-width: rem-calc(190);
+//                max-height: rem-calc(190);
+//            }
+//        }
+//    }
+//
+//    &__content {
+//        width: 70%;
+//        float: left;
+//        padding-left: rem-calc(15);
+//
+//        @include breakpoint(920 down) {
+//            width: 60%;
+//        }
+//
+//        @include breakpoint(565 down) {
+//            width: 100%;
+//            padding: 0;
+//        }
+//    }
+//
+//    &__heading {
+//        width: 100%;
+//        float: left;
+//        font-family: $primary;
+//        color: $red;
+//        font-size: rem-calc(30);
+//        line-height: rem-calc(30);
+//        margin: rem-calc(0 0 10 0);
+//
+//        @include breakpoint(565 down) {
+//            font-size: rem-calc(25);
+//            line-height: rem-calc(25);
+//        }
+//    }
+//
+//    &__button {
+//        display: inline-block;
+//        float: left;
+//        background-color: $jet;
+//        font-size: rem-calc(16);
+//        line-height: rem-calc(16);
+//        color: #fff;
+//        text-transform: uppercase;
+//        font-weight: 600;
+//        padding: rem-calc(10 25);
+//        border-radius: rem-calc(25);
+//        border: rem-calc(2) solid $jet;
+//        -webkit-transition: ease 0.5s;
+//        -moz-transition: ease 0.5s;
+//        -ms-transition: ease 0.5s;
+//        -o-transition: ease 0.5s;
+//        transition: ease 0.5s;
+//
+//        &:hover {
+//            color: $jet;
+//            background-color: #fff;
+//        }
+//
+//        &--red {
+//            background-color: $red;
+//            border-color: $red;
+//
+//            &:hover {
+//                color: $red;
+//            }
+//        }
+//    }
+//
+//    &__characters {
+//        width: 100%;
+//        float: left;
+//    }
+//
+//    &__character {
+//        @include grid-column(3);
+//        @include grid-column-end();
+//
+//        @include breakpoint(medium only) {
+//            @include grid-column(4);
+//            @include grid-column-end();
+//            margin-bottom: rem-calc(15);
+//        }
+//
+//        @include breakpoint(small only) {
+//            @include grid-column(6);
+//            @include grid-column-end();
+//            margin-bottom: rem-calc(15);
+//        }
+//
+//        @include breakpoint(400 down) {
+//            @include grid-column(12);
+//            margin-bottom: rem-calc(15);
+//        }
+//
+//    }
+//
+//    &__image-contain {
+//        width: 100%;
+//        float: left;
+//        //border: 1px solid $grey;
+//        height: rem-calc(245);
+//
+//        .image {
+//            width: 100%;
+//            height: 100%;
+//            float: left;
+//            position: relative;
+//
+//            //&:hover {
+//            //    .name {
+//            //        opacity: 1;
+//            //        visibility: visible;
+//            //        z-index: 3;
+//            //    }
+//            //}
+//
+//            img {
+//                max-height: rem-calc(200);
+//                max-width: rem-calc(200);
+//                @include center(true, true);
+//                border-radius: 50%;
+//                border: rem-calc(5) solid $red;
+//                padding: rem-calc(5);
+//                z-index: 2;
+//            }
+//        }
+//
+//        .name {
+//            width: 100%;
+//            float: left;
+//            height: 100%;
+//            background-color: rgba(#000, 0.7);
+//            position: absolute;
+//            left: 0;
+//            top: 0;
+//            opacity: 0;
+//            visibility: hidden;
+//            -webkit-transition: ease-in-out 0.5s;
+//            -moz-transition: ease-in-out 0.5s;
+//            -ms-transition: ease-in-out 0.5s;
+//            -o-transition: ease-in-out 0.5s;
+//            transition: ease-in-out 0.5s;
+//
+//            span {
+//                width: 100%;
+//                float: left;
+//                text-align: center;
+//                @include center(true, true);
+//                font-family: $primary;
+//                color: #fff;
+//                font-size: rem-calc(25);
+//                line-height: rem-calc(25);
+//                font-weight: 600;
+//
+//                @include breakpoint(small only) {
+//                    font-size: rem-calc(20);
+//                    line-height: rem-calc(20);
+//                }
+//            }
+//        }
+//    }
+//
+//    &__subtitle {
+//        @include grid-column(12);
+//        font-family: $primary;
+//        color: $red;
+//        font-size: rem-calc(35);
+//        line-height: rem-calc(35);
+//        margin-bottom: rem-calc(15);
+//
+//        &--center {
+//            text-align: center;
+//        }
+//    }
+//
+//    &__map {
+//        @include grid-column(12);
+//    }
+//
+//    .accordion {
+//        @include grid-column(10);
+//        @include grid-column-position(center);
+//
+//        @include breakpoint(850 down) {
+//            @include grid-column(12);
+//        }
+//
+//        .accordion-item {
+//            width: 100%;
+//            float: left;
+//            border: 1px solid $grey;
+//            margin-bottom: rem-calc(15);
+//
+//            &:last-of-type {
+//                margin-bottom: 0;
+//            }
+//
+//            &.is-active {
+//                background-color: #fff;
+//                .accordion-title {
+//                    &::before {
+//                        content: '\f077';
+//                    }
+//                }
+//            }
+//
+//            .accordion-title {
+//                width: 100%;
+//                float: left;
+//                font-family: $primary;
+//                font-weight: 600;
+//                color: $jet;
+//                font-size: rem-calc(20);
+//                line-height: rem-calc(20);
+//                border: 0;
+//
+//                &:hover,
+//                &:focus {
+//                    background-color: #fff!important;
+//                }
+//
+//                &::before {
+//                    content: '\f078';
+//                    font-family: $fa;
+//                    font-weight: 900;
+//                    color: $red;
+//                    font-size: rem-calc(22);
+//                    line-height: rem-calc(22);
+//                }
+//            }
+//
+//            .accordion-content {
+//                width: 100%;
+//                float: left;
+//                border: 0;
+//
+//                p {
+//                    font-family: $body;
+//                    color: $jet;
+//                    font-size: rem-calc(16);
+//                    line-height: rem-calc(20);
+//                }
+//            }
+//        }
+//    }
+//
+//    &__gallery {
+//        width: 100%;
+//        float: left;
+//        background-color: rgba(#000, 0.8);
+//        position: relative;
+//        height: rem-calc(550);
+//        -webkit-background-size: cover;
+//        background-size: cover;
+//        background-position: center center;
+//
+//        @include breakpoint(1130 down) {
+//            height: rem-calc(450);
+//        }
+//
+//        @include breakpoint(small only) {
+//            height: auto;
+//            padding: rem-calc(30 15);
+//        }
+//
+//        .content {
+//            width: calc(100% - 60px);
+//            float: left;
+//            @include center(true, true);
+//            text-align: center;
+//            background-color: rgba(#000, 0.7);
+//            padding: rem-calc(50 15);
+//            border-radius: rem-calc(10);
+//
+//            @include breakpoint(small only) {
+//                padding: rem-calc(30 15);
+//                @include center(true, false);
+//                position: relative;
+//                top: 0;
+//            }
+//
+//            @include breakpoint(small only) {
+//                width: calc(100% - 15px);
+//            }
+//
+//            .icon {
+//                width: rem-calc(168);
+//                height: rem-calc(150);
+//                float: left;
+//                @include center(true, false);
+//                position: relative;
+//                margin-bottom: rem-calc(15);
+//
+//                @include breakpoint(1130 down) {
+//                    width: rem-calc(135);
+//                    height: rem-calc(120);
+//                }
+//
+//                @include breakpoint(small only) {
+//                    width: rem-calc(101);
+//                    height: rem-calc(90);
+//                }
+//
+//                &:before {
+//                    content:'\f302';
+//                    font-weight: bold;
+//                    font-family: $fa;
+//                    color: #fff;
+//                    font-size: rem-calc(150);
+//                    line-height: rem-calc(150);
+//
+//                    @include breakpoint(1130 down) {
+//                        font-size: rem-calc(120);
+//                        line-height: rem-calc(120);
+//                    }
+//
+//                    @include breakpoint(small only) {
+//                        font-size: rem-calc(90);
+//                        line-height: rem-calc(90);
+//                    }
+//                }
+//            }
+//
+//            p {
+//                width: 100%;
+//                float: left;
+//                font-family: $body;
+//                color: #fff;
+//                font-size: rem-calc(50);
+//                line-height: rem-calc(50);
+//                font-weight: bold;
+//                margin-bottom: rem-calc(20);
+//                text-transform: uppercase;
+//
+//                @include breakpoint(1130 down) {
+//                    font-size: rem-calc(35);
+//                    line-height: rem-calc(35);
+//                }
+//
+//                @include breakpoint(small only) {
+//                    font-size: rem-calc(30);
+//                    line-height: rem-calc(30);
+//                }
+//            }
+//
+//            .page__button {
+//                @include center(true, false);
+//                position: relative;
+//                padding: rem-calc(10 20);
+//
+//                &:hover {
+//                    background-color: transparent;
+//                }
+//            }
+//        }
+//    }
+//}

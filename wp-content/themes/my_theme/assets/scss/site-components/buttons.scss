@@ -1,0 +1,57 @@
+.btn {
+    display: inline-block;
+    font-family: $primary;
+    font-size: rem-calc(20);
+    line-height: rem-calc(20);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+    border: rem-calc(1) solid #fff;
+    background-color: transparent;
+    transition: ease, 0.5s;
+    padding: rem-calc(12 25);
+
+    @include breakpoint(small only) {
+        width: 100%;
+        text-align: center;
+        padding: rem-calc(12 0);
+    }
+
+    &:hover {
+        color: $primary-colour;
+        background-color: #fff;
+    }
+
+    &--secondary {
+        border-color: $secondary-colour;
+        background-color: $secondary-colour;
+        color: #fff;
+
+        &:hover {
+            color: $secondary-colour;
+            background-color: #fff;
+        }
+    }
+
+    &--secondary2 {
+        border-color: $secondary-colour-2;
+        background-color: $secondary-colour-2;
+        color: #fff;
+
+        &:hover {
+            color: $secondary-colour-2;
+            background-color: #fff;
+        }
+    }
+
+    &--comp-colour {
+        border-color: $comp-colour;
+        background-color: $comp-colour;
+        color: #fff;
+
+        &:hover {
+            color: $comp-colour;
+            background-color: #fff;
+        }
+    }
+}

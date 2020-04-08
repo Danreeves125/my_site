@@ -1,0 +1,248 @@
+.footer {
+    width: 100%;
+    float: left;
+    background-color: $jet;
+
+    @include breakpoint(small only) {
+        padding: rem-calc(15 0 0 0);
+    }
+
+    &__middle {
+        width: 100%;
+        padding: rem-calc(60 15);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: flex-start;
+
+        @include breakpoint(medium only) {
+            padding: rem-calc(40 15);
+        }
+
+        @include breakpoint(small only) {
+            padding: rem-calc(30 15);
+        }
+    }
+
+    &__column {
+        width: calc((100% - 60px) / 3);
+
+        @include breakpoint(medium only) {
+            width: calc((100% - 15px) / 2);
+
+            &:first-of-type {
+                width: 100%;
+                margin-bottom: rem-calc(40);
+            }
+        }
+
+        @include breakpoint(small only) {
+            width: 100%;
+
+            &:not(:last-of-type) {
+                margin-bottom: rem-calc(30);
+            }
+        }
+    }
+
+    &__title {
+        width: 100%;
+        font-family: $primary;
+        color: $primary-colour;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: rem-calc(25);
+        line-height: rem-calc(25);
+        margin-bottom: rem-calc(30);
+    }
+
+    &__logo {
+        width: 100%;
+        margin-bottom: rem-calc(15);
+
+        svg {
+            width: rem-calc(130);
+            height: auto;
+
+            @include breakpoint(medium only) {
+                width: rem-calc(100);
+            }
+
+            path {
+                fill: #fff;
+                transition: ease, 0.5s;
+
+                &.glasses {
+                    fill: $primary-colour;
+                }
+            }
+        }
+    }
+
+    &__text {
+        width: 100%;
+        padding-right: rem-calc(30);
+        margin-bottom: rem-calc(30);
+    }
+
+    &__links {
+        width: 50%;
+        float: left;
+        list-style: none;
+        margin: 0;
+
+        @include breakpoint(500 down) {
+            width: 100%;
+            float: left;
+        }
+    }
+
+    &__link-item {
+        width: 100%;
+        float: left;
+        font-family: $body;
+        color: #fff;
+        font-size: rem-calc(16);
+        line-height: rem-calc(16);
+        margin-bottom: rem-calc(12);
+
+        a {
+            font-family: inherit;
+            color: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+    }
+
+    &__address {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0;
+        list-style: none;
+
+        li {
+            width: 100%;
+            font-family: $body;
+            color: #fff;
+            font-size: rem-calc(16);
+            line-height: rem-calc(21);
+            position: relative;
+            padding-left: rem-calc(30);
+
+            &:not(:last-of-type) {
+                margin-bottom: rem-calc(25);
+            }
+
+            &:last-of-type {
+                &:before {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            &:before {
+                content: attr(data-fa-icon);
+                font-family: $fa;
+                color: $secondary-colour;
+                font-weight: 900;
+                font-size: rem-calc(20);
+                line-height: rem-calc(20);
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            p {
+                &:not(:last-of-type) {
+                    margin-bottom: rem-calc(5);
+                }
+            }
+
+            p, a {
+                font-family: inherit;
+                color: inherit;
+                font-size: inherit;
+                line-height: inherit;
+                margin-bottom: 0;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        width: 100%;
+        background-color: #000;
+        padding: rem-calc(15 0);
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            @include breakpoint(small only) {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    }
+
+    &__list {
+        width: 100%;
+        padding: rem-calc(0 15);
+        list-style: none;
+        font-size: 0;
+        margin: 0;
+
+        @include breakpoint(small only) {
+            text-align: center;
+            margin-bottom: rem-calc(15);
+        }
+    }
+
+    &__list-item {
+        display: inline-block;
+        font-family: $body;
+        color: #fff;
+        font-size: rem-calc(14);
+        line-height: rem-calc(14);
+
+        @include breakpoint(small only) {
+            width: 100%;
+            margin-bottom: rem-calc(10);
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &:after {
+            content: '|';
+            margin: rem-calc(0 10);
+
+            @include breakpoint(small only) {
+                display: none;
+            }
+        }
+
+        &:last-of-type {
+            &:after {
+                display: none;
+            }
+        }
+
+        a {
+            font-family: inherit;
+            color: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+    }
+
+}

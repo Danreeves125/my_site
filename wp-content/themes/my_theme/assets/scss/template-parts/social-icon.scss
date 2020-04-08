@@ -1,0 +1,82 @@
+.social {
+    display: flex;
+    margin: rem-calc(0 15 0 0);
+    list-style: none;
+    font-size: 0;
+
+    @include breakpoint(small only) {
+        text-align: center;
+        margin-right: 0;
+    }
+
+
+    &--center {
+        text-align: center;
+        margin: rem-calc(30 0);
+
+        @include breakpoint(small only) {
+            margin: rem-calc(15 0);
+        }
+    }
+
+    &__item {
+        display: inline-block;
+        margin-right: rem-calc(7);
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        a {
+            width: rem-calc(35);
+            height: rem-calc(35);
+            background-color: $secondary-colour-2;
+            display: inline-block;
+            position: relative;
+            border-radius: 50%;
+
+            &:before {
+                font-family: 'Font Awesome 5 Brands';
+                font-weight: 900;
+                @include center(true, true);
+                font-size: rem-calc(20);
+                line-height: rem-calc(20);
+                color: #fff;
+            }
+        }
+
+        &--large {
+            a {
+                width: rem-calc(45);
+                height: rem-calc(45);
+
+                &:before {
+                    font-size: rem-calc(30);
+                    line-height: rem-calc(30);
+                }
+            }
+        }
+
+        &--facebook {
+            a {
+                &:before {
+                    content: '\f39e';
+                }
+            }
+        }
+        &--twitter {
+            a {
+                &:before {
+                    content: '\f099';
+                }
+            }
+        }
+        &--instagram {
+            a {
+                &:before {
+                    content: '\f16d';
+                }
+            }
+        }
+    }
+}
