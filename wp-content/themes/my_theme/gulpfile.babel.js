@@ -58,8 +58,8 @@ function scripts() {
 }
 
 function watchFiles() {
-    gulp.watch('assets/scss/**/*.scss', gulp.series('styles'));
-    gulp.watch('assets/js/active/**/*.js', gulp.series('scripts'));
+    gulp.watch('src/scss/**/*.scss', gulp.series('styles'));
+    gulp.watch('src/js/active/*.js', gulp.series('scripts'));
 }
 
 

@@ -1,0 +1,29 @@
+.social {
+    margin: rem-calc(0 0 30 0);
+    font-size: 0;
+    text-align: right;
+    padding: rem-calc(0 15);
+
+    @include breakpoint(770 down) {
+        width: 100%;
+        text-align: center;
+    }
+
+    &__item {
+        display: inline-block;
+
+        &:not(:last-of-type) {
+            margin-right: rem-calc(30);
+        }
+
+        a {
+            &::before {
+                content: attr(data-fa-icon);
+                font-family: 'Font Awesome 5 Brands';
+                font-size: rem-calc(30);
+                line-height: rem-calc(30);
+                color: #fff;
+            }
+        }
+    }
+}

@@ -11,4 +11,17 @@
 <?php ?>
 <!--    --><?php //get_template_part('template-parts/mobile-menu')?>
     <header class="header <?=(get_post_field( 'post_name' ) != 'home') ? 'header--state2' : ''?>">
+        <div class="container">
+            <a href="#" class="header__logo">
+                Daniel Reeves<span>.</span>
+            </a>
+            <nav class="header__navigation">
+                <ul class="header__nav">
+                    <li class="header__nav-item"><a href="#" title="About Me">About Me</a></li>
+                    <li class="header__nav-item"><a href="#" title="Portfolio">Portfolio</a></li>
+                    <li class="header__nav-item"><a href="#" title="Blog">Blog</a></li>
+                    <li class="header__nav-item"><a href="#" title="Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>

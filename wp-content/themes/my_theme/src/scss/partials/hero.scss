@@ -1,0 +1,86 @@
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    @keyframes heroScroll {
+        50% {
+            top: 19px;
+        }
+
+        100% {
+            top: 7px;
+        }
+    }
+
+    &__scroll {
+        width: rem-calc(25);
+        height: rem-calc(40);
+        float: left;
+        border: rem-calc(2) solid #fff;
+        border-radius: rem-calc(40);
+        @include center(true, false);
+        bottom: rem-calc(30);
+        z-index: 2;
+
+        .icon{
+            width: rem-calc(3);
+            height: rem-calc(9);
+            background-color: #fff;
+            border-radius: rem-calc(3);
+            @include center(true, false);
+            top: 7px;
+            transition: ease, 0.5s;
+            animation-name: heroScroll;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+    }
+
+    &__content {
+        //width: rem-calc(400);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    &__title {
+        width: 100%;
+        margin-bottom: rem-calc(30);
+
+        > span {
+            width: 100%;
+            display: block;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: bold;
+
+            &:first-of-type {
+                font-size: rem-calc(55);
+                line-height: rem-calc(55);
+            }
+
+            &:nth-of-type(2) {
+                font-size: rem-calc(60);
+                line-height: rem-calc(60);
+            }
+
+            &:not(:last-of-type) {
+                font-family: $primary;
+                margin-bottom: rem-calc(10);
+            }
+
+            &:last-of-type {
+                font-family: $body;
+            }
+
+            span {
+                color: $neon;
+            }
+        }
+    }
+}
