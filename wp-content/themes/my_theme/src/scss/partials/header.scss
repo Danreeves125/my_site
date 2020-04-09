@@ -8,6 +8,7 @@
     padding: rem-calc(21 0);
     transition: ease, 0.5s;
     overflow: hidden;
+    z-index: 100;
 
     &:before {
         content: '';

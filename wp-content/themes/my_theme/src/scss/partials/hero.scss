@@ -59,6 +59,7 @@
             text-transform: uppercase;
             color: #fff;
             font-weight: bold;
+            transition: ease, 0.5s;
 
             &:first-of-type {
                 @include fluid-type($min_width, $max_width, $min_font, $max_font);

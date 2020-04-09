@@ -20,3 +20,35 @@
         }
     }
 }
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-family: $primary;
+    color: $coal;
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: rem-calc(0 15 30 15);
+    margin: rem-calc(0 0 45 0);
+    position: relative;
+
+    &:before {
+        content: '';
+        width: rem-calc(85);
+        height: rem-calc(6);
+        background: linear-gradient(230deg, $blue 0%, $violet 100%);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &--white {
+        color: #fff;
+
+        &:before {
+            background: $neon;
+        }
+    }
+}

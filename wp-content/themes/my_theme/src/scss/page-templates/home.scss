@@ -1,0 +1,130 @@
+.home {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    &__section  {
+        width: 100%;
+        padding: rem-calc(60 0);
+        position: relative;
+        overflow: hidden;
+
+        @include breakpoint(medium only) {
+            padding: rem-calc(40 0);
+        }
+
+        @include breakpoint(small only) {
+            padding: rem-calc(30 0);
+        }
+
+        &--grey {
+            background-color: $light-grey;
+        }
+
+        &--grey-gradient {
+            background: linear-gradient(180deg, $light-grey 0%, #fff 100%);
+        }
+
+        &--gradient {
+            background: linear-gradient(35deg, $violet 0%, $blue 100%);
+        }
+
+        &--p30 {
+            padding: rem-calc(30 0);
+        }
+    }
+
+    &__code-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &__stats {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding: rem-calc(0 15);
+    }
+
+    &__stat {
+        width: calc((100% - (15px * 4)) / 5);
+        height: rem-calc(228);
+        background-color: #fff;
+        border-radius: rem-calc(20);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+
+        &:not(:last-of-type) {
+            margin-right: rem-calc(15);
+        }
+
+        &:before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+            background: linear-gradient(35deg, $blue 0%, $violet 100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: ease, 0.5s;
+        }
+
+        &:hover {
+            &:before {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .content {
+                .icon {
+                    &:before {
+                        color: #fff;
+                    }
+                }
+
+                p {
+                    color: #fff;
+                }
+            }
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+
+            .icon {
+                margin-bottom: rem-calc(15);
+                text-align: center;
+
+                &:before {
+                    content: attr(data-fa-icon);
+                    font-family: $fa;
+                    font-weight: 900;
+                    color: $coal;
+                    font-size: rem-calc(55);
+                    line-height: rem-calc(55);
+                    transition: ease, 0.5s;
+                }
+            }
+
+            p {
+                text-align: center;
+                font-family: $primary;
+                font-weight: bold;
+                font-size: rem-calc(30);
+                line-height: rem-calc(36);
+                color: $coal;
+                margin-bottom: 0;
+                padding: rem-calc(0 15);
+                transition: ease, 0.5s;
+            }
+        }
+    }
+}
