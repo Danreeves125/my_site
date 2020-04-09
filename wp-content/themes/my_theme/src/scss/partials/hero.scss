@@ -46,6 +46,7 @@
         flex-wrap: wrap;
         justify-content: center;
         text-align: center;
+        padding: rem-calc(0 15);
     }
 
     &__title {
@@ -60,22 +61,25 @@
             font-weight: bold;
 
             &:first-of-type {
-                font-size: rem-calc(55);
-                line-height: rem-calc(55);
+                @include fluid-type($min_width, $max_width, $min_font, $max_font);
             }
 
             &:nth-of-type(2) {
-                font-size: rem-calc(60);
-                line-height: rem-calc(60);
+                @include fluid-type($min_width, $max_width, $min_font + 5px, $max_font + 5px);
             }
 
             &:not(:last-of-type) {
                 font-family: $primary;
                 margin-bottom: rem-calc(10);
+
+                @include breakpoint(small only) {
+                    margin-bottom: rem-calc(5);
+                }
             }
 
             &:last-of-type {
                 font-family: $body;
+                @include fluid-type($min_width, $max_width, $min_font - 5px, $max_font - 10px);
             }
 
             span {

@@ -15,6 +15,7 @@
             <li class="social__item"><a href="#" target="_blank" title="" data-fa-icon="&#xf099"></a></li>
             <li class="social__item"><a href="#" target="_blank" title="" data-fa-icon="&#xf09b"></a></li>
         </ul>
+        <a href="#" class="button"><span>Get in Touch</span></a>
     </div>
     <div class="hero__scroll">
         <div class="icon"></div>

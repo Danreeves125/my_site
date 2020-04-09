@@ -20,6 +20,7 @@
 $fallback-fonts: Helvetica, Arial, sans-serif;
 $body: 'Roboto', $fallback-fonts;
 $primary: 'Roboto Condensed', $fallback-fonts;
+$fa: 'Font Awesome 5 Free', 'Font Awesome 5 brands';
 
 $light-grey: hsla(0, 7%, 92%, 1);
 $grey: hsla(0, 0%, 87%, 1);
@@ -31,6 +32,11 @@ $pink: hsla(323, 71%, 53%, 1);
 $violet: hsla(293, 46%, 51%, 1);
 $purple: hsla(245, 55%, 59%, 1);
 $blue: hsla(211, 100%, 41%, 1);
+
+$min_width: 320px;
+$max_width: 1200px;
+$max_font: 55px;
+$min_font: 40px;
 
 
 

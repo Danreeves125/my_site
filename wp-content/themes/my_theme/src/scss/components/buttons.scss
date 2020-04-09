@@ -1,0 +1,29 @@
+.button {
+    display: inline-flex;
+    border-radius: rem-calc(25);
+    line-height: rem-calc(25);
+    font-size: rem-calc(25);
+    font-family: $primary;
+    color: #fff;
+    font-weight: bold;
+    background: linear-gradient(90deg, $blue 0%, $violet 100%);
+    justify-content: center;
+    overflow: hidden;
+    padding: rem-calc(3);
+    transition: ease, 0.5s;
+
+    span {
+        padding: rem-calc(11 37);
+        background: linear-gradient(90deg, $blue 0%, $violet 100%);
+        border-radius: inherit;
+        transition: ease, 0.5s;
+    }
+
+    &:hover {
+        color: $blue;
+
+        span {
+            background: #fff;
+        }
+    }
+}

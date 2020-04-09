@@ -21,12 +21,12 @@ var gulp         = require('gulp'),
 //         .pipe(gulp.dest('src/scss/node-imports'))
 // }
 
-// function fontAwesome() {
-//     return gulp.src(
-//         'node_modules/@fortawesome/fontawesome-pro/webfonts/**.*'
-//     )
-//         .pipe(gulp.dest('assets/fonts/webfonts'));
-// }
+function fontAwesome() {
+    return gulp.src(
+        'node_modules/@fortawesome/fontawesome-free/webfonts/**.*'
+    )
+        .pipe(gulp.dest('dist/fonts/webfonts'));
+}
 
 function styles() {
     return gulp.src('src/scss/app.scss')
@@ -65,10 +65,10 @@ function watchFiles() {
 
 gulp.task('scripts', scripts);
 gulp.task('styles', styles);
-// gulp.task('fontAwesome', fontAwesome);
+gulp.task('fontAwesome', fontAwesome);
 // gulp.task('change', change);
 
-gulp.task('default', gulp.parallel(scripts, styles));
+gulp.task('default', gulp.parallel(scripts, styles, fontAwesome));
 
 gulp.task("watch", function () {
     watchFiles()

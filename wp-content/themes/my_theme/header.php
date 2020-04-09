@@ -9,13 +9,18 @@
 </head>
 <body <?php body_class(); ?> data-page="<?=get_post_field( 'post_name' );?>">
 <?php ?>
-<!--    --><?php //get_template_part('template-parts/mobile-menu')?>
+    <?php get_template_part('template-parts/mobile-menu')?>
+    <button class="hamburger" aria-label="Open Mobile Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
     <header class="header <?=(get_post_field( 'post_name' ) != 'home') ? 'header--state2' : ''?>">
         <div class="container">
             <a href="#" class="header__logo">
                 Daniel Reeves<span>.</span>
             </a>
-            <nav class="header__navigation">
+            <nav class="header__navigation" role="navigation" aria-label="Main Nav">
                 <ul class="header__nav">
                     <li class="header__nav-item"><a href="#" title="About Me">About Me</a></li>
                     <li class="header__nav-item"><a href="#" title="Portfolio">Portfolio</a></li>

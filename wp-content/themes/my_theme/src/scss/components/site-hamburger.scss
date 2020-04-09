@@ -1,0 +1,69 @@
+.hamburger {
+    width: 32px;
+    height: 24px;
+    position: fixed;
+    z-index: 150;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    top: rem-calc(21);
+    right: rem-calc(15);
+    transition: ease, 0.5s;
+
+    &.hidden {
+        display: none;
+    }
+
+    @include breakpoint(small only) {
+        display: flex;
+        //top: rem-calc(39);
+    }
+
+    .bar {
+        width: 32px;
+        height: 4px;
+        background-color: #fff;
+        transition: ease, 0.5s;
+
+        @include breakpoint(small only) {
+            width: 32px;
+            height: 4px;
+        }
+    }
+
+    &.active {
+        .bar {
+            position: relative;
+
+            &:nth-child(1) {
+                -webkit-transform: rotateZ(-45deg);
+                -moz-transform: rotateZ(-45deg);
+                -ms-transform: rotateZ(-45deg);
+                -o-transform: rotateZ(-45deg);
+                transform: rotateZ(-45deg);
+                transform-origin: 100% 0;
+            }
+
+            &:nth-child(2) {
+                width: 0;
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                -webkit-transform: rotateZ(45deg);
+                -moz-transform: rotateZ(45deg);
+                -ms-transform: rotateZ(45deg);
+                -o-transform: rotateZ(45deg);
+                transform: rotateZ(45deg);
+                transform-origin: 100% 100%;
+                bottom: rem-calc(-2);
+
+                @include breakpoint(small only) {
+                    bottom: rem-calc(-2);
+                }
+            }
+        }
+    }
+}

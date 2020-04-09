@@ -2,11 +2,10 @@
 
 $fa-font-path: "../fonts/webfonts" !default;
 
-//@import "../../node_modules/@fortawesome/fontawesome-pro/scss/fontawesome.scss";
-//@import "../../node_modules/@fortawesome/fontawesome-pro/scss/light.scss";
-//@import "../../node_modules/@fortawesome/fontawesome-pro/scss/regular.scss";
-//@import "../../node_modules/@fortawesome/fontawesome-pro/scss/solid.scss";
-//@import "../../node_modules/@fortawesome/fontawesome-pro/scss/brands.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 
 @import "theme_settings/rem-calc";
 @import "theme_settings/normalise";
@@ -19,10 +18,14 @@ $fa-font-path: "../fonts/webfonts" !default;
 
 //Components
 @import "components/social-icon";
+@import "components/buttons";
+@import "components/site-hamburger";
 
 //partials
 @import "partials/header";
+@import "partials/footer";
 @import "partials/hero";
+@import "partials/mobile-menu";
 
 //Pages
 

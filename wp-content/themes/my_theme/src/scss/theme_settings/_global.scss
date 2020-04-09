@@ -1,4 +1,24 @@
 .container {
     width: $container-width;
     margin: 0 auto;
+
+    @include breakpoint(1230 down) {
+        width: 100%;
+    }
+}
+
+html {
+    &.mobile-menu-open {
+        overflow: hidden;
+
+        body {
+
+            .mobile {
+                opacity: 1;
+                visibility: visible;
+                z-index: 140;
+                transition: ease, 0.5s;
+            }
+        }
+    }
 }
