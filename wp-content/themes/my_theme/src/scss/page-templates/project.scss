@@ -1,0 +1,59 @@
+.project {
+    $self: &;
+
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+
+        &:hover {
+            #{$self}__image {
+                .image {
+                    transform: scale(1.1);
+
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: rem-calc(350);
+        margin-bottom: rem-calc(15);
+        position: relative;
+        overflow: hidden;
+        border-radius: rem-calc(20);
+
+        .image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: ease, 0.5s;
+
+            &:before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                background-color: rgba(#000, 0.5);
+                opacity: 0;
+                transition: ease, 0.5s;
+            }
+        }
+    }
+
+    &__title {
+        width: 100%;
+        font-family: $primary;
+        color: $coal;
+        @include fluid-type($min_width, $max_width, 30px, 40px);
+        text-align: center;
+    }
+}

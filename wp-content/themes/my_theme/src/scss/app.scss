@@ -7,6 +7,8 @@ $fa-font-path: "../fonts/webfonts" !default;
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 
+@import '../../node_modules/swiper/swiper';
+
 @import "theme_settings/rem-calc";
 @import "theme_settings/normalise";
 @import "theme_settings/fonts";
@@ -21,6 +23,7 @@ $fa-font-path: "../fonts/webfonts" !default;
 @import "components/buttons";
 @import "components/site-hamburger";
 @import "components/checkbox";
+@import "components/site-slider";
 
 //partials
 @import "partials/header";
@@ -28,6 +31,8 @@ $fa-font-path: "../fonts/webfonts" !default;
 @import "partials/hero";
 @import "partials/mobile-menu";
 @import "partials/cta-banner";
+@import "partials/review";
 
 //Pages
 @import "page-templates/home";
+@import "page-templates/project";
