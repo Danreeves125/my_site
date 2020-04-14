@@ -20,12 +20,14 @@ $fa-font-path: "../fonts/webfonts" !default;
 @import "components/social-icon";
 @import "components/buttons";
 @import "components/site-hamburger";
+@import "components/checkbox";
 
 //partials
 @import "partials/header";
 @import "partials/footer";
 @import "partials/hero";
 @import "partials/mobile-menu";
+@import "partials/cta-banner";
 
 //Pages
 @import "page-templates/home";

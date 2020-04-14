@@ -33,6 +33,12 @@
             opacity: 1;
             visibility: visible;
         }
+
+        #{$self}__logo {
+            span {
+                color: #fff;
+            }
+        }
         
         #{$self}__nav-item {
             &:before {
@@ -67,6 +73,7 @@
 
         span {
             color: $neon;
+            transition: ease, 0.5s;
         }
     }
 

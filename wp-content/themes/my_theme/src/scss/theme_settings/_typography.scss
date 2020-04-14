@@ -33,6 +33,11 @@
     margin: rem-calc(0 0 45 0);
     position: relative;
 
+    @include breakpoint(small only) {
+        margin-bottom: rem-calc(30);
+        padding-bottom: rem-calc(25);
+    }
+
     &:before {
         content: '';
         width: rem-calc(85);
@@ -49,6 +54,26 @@
 
         &:before {
             background: $neon;
+        }
+    }
+}
+
+.dynamic {
+    p, ul {
+        font-family: $body;
+        color: $coal;
+        font-size: rem-calc(18);
+        line-height: rem-calc(25);
+        font-weight: 400;
+        margin-bottom: rem-calc(10);
+
+        $max_font: 55px;
+        $min_font: 40px;
+
+        @include fluid-type($min_width, $max_width, $min_font - 28px, $max_font - 37px);
+
+        &:last-child {
+            margin-bottom: 0;
         }
     }
 }

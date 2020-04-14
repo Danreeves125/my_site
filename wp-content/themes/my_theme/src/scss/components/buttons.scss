@@ -9,7 +9,7 @@
     background: linear-gradient(90deg, $blue 0%, $violet 100%);
     justify-content: center;
     overflow: hidden;
-    padding: rem-calc(3);
+    padding: rem-calc(2);
     transition: ease, 0.5s;
 
     span {
@@ -24,6 +24,18 @@
 
         span {
             background: #fff;
+        }
+    }
+
+    &--white-outline {
+        border: rem-calc(2) solid #fff;
+        background: transparent;
+        color: #fff;
+        padding: rem-calc(11 37);
+        
+        &:hover {
+            background-color: #fff;
+            color: $neon;
         }
     }
 }

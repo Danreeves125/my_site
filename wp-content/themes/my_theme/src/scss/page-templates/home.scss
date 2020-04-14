@@ -40,6 +40,14 @@
         top: 0;
         left: 0;
         z-index: -1;
+
+        @include breakpoint(medium only) {
+            width: rem-calc(750);
+        }
+
+        @include breakpoint(small only) {
+            width: rem-calc(670);
+        }
     }
 
     &__stats {
@@ -127,4 +135,158 @@
             }
         }
     }
+
+    &__inner {
+        width: 100%;
+        display: flex;
+    }
+
+    &__content {
+        width: calc(100% - 340px);
+        padding: rem-calc(0 15);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @include breakpoint(medium only) {
+            width: calc(100% - 250px);
+        }
+
+        @include breakpoint(small only) {
+            width: calc(100% - 150px);
+        }
+
+        img {
+            width: rem-calc(220);
+            border-radius: 50%;
+            margin-bottom: rem-calc(35);
+            box-shadow: 0 3px 11px rgba(#000, 0.16);
+
+            @include breakpoint(small only) {
+                width: rem-calc(160);
+                margin-bottom: rem-calc(25);
+            }
+        }
+    }
+
+    &__sidebar {
+        width: rem-calc(340);
+        padding: rem-calc(0 15);
+
+        @include breakpoint(medium only) {
+            width: rem-calc(250);
+        }
+
+        @include breakpoint(small only) {
+            width: rem-calc(150);
+            padding-left: 0;
+        }
+    }
+
+    &__options {
+        width: 100%;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__option {
+        width: 100%;
+
+        &:not(:last-of-type) {
+            margin-bottom: rem-calc(30);
+        }
+    }
+
+    &__option-title {
+        width: 100%;
+        padding-bottom: rem-calc(10);
+        margin-bottom: rem-calc(18);
+        font-family: $primary;
+        color: $neon;
+        font-size: rem-calc(30);
+        line-height: rem-calc(30);
+        font-weight: bold;
+        border-bottom: rem-calc(3) solid $neon;
+
+        @include breakpoint(small only) {
+            font-size: rem-calc(20);
+            line-height: rem-calc(20);
+        }
+
+        &--violet {
+            color: $violet;
+            border-color: $violet;
+        }
+
+        &--blue {
+            color: $blue;
+            border-color: $blue;
+        }
+    }
+
+    &__blocks {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: rem-calc(0 15);
+
+    }
+    &__block {
+        width: calc((100% - 35px) / 2);
+        background-color: #fff;
+        border-radius: rem-calc(20);
+        box-shadow: 0 0 25px rgba(#000, 0.25);
+        padding: rem-calc(30);
+        text-align: center;
+
+        @include breakpoint(small only) {
+            width: 100%;
+
+            &:first-of-type {
+                margin-bottom: rem-calc(30);
+            }
+        }
+
+    }
+
+    &__block-title {
+        width: 100%;
+        margin-bottom: rem-calc(30);
+        font-family: $primary;
+        color: $purple;
+        @include fluid-type($min_width, $max_width, $min_font - 10px, $max_font - 10px);
+        text-transform: uppercase;
+        font-weight: bold;
+
+        @include breakpoint(small only) {
+            margin-bottom: rem-calc(15);
+        }
+
+        &--neon {
+            color: $neon;
+        }
+    }
+
+    &__block-list {
+        margin: 0;
+        list-style: none;
+
+        li {
+            font-family: $body;
+            color: $coal;
+            line-height: rem-calc(30);
+            font-weight: 500;
+            @include fluid-type($min_width, $max_width, 20px, 25px);
+
+            &:not(:last-of-type) {
+                margin-bottom: rem-calc(15);
+
+                @include breakpoint(small only) {
+                    margin-bottom: rem-calc(10);
+                }
+            }
+        }
+    }
+
 }

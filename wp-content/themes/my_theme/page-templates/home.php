@@ -62,13 +62,117 @@
         <img src="<?=get_stylesheet_directory_uri()?>/src/images/about-bg.jpg" alt="" class="home__code-bg">
         <div class="container">
             <h2 class="title">About Me</h2>
+            <div class="home__inner">
+                <div class="home__content">
+                    <img src="<?=get_stylesheet_directory_uri()?>/src/images/placeholder/image-coming-soon.jpg" alt="Image Comming Soon">
+                    <div class="home__text">
+                        <div class="dynamic">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad animi cupiditate delectus deserunt distinctio doloremque dolorum esse in inventore ipsa nostrum numquam, odit quaerat quam quis reprehenderit veniam voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi dicta eos, expedita illo, iure, nemo optio quia repudiandae sapiente ullam vel. Amet autem dolorem illum neque, tempora veritatis voluptates?
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores delectus dolore doloribus, dolorum ea eaque eius esse, est facere fugiat nemo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores delectus dolore doloribus, dolorum ea eaque eius esse, est facere fugiat nemo.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores delectus dolore doloribus, dolorum ea eaque eius esse, est facere fugiat nemo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores delectus dolore doloribus, dolorum ea eaque eius esse, est facere fugiat nemo.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores delectus dolore doloribus, dolorum ea eaque eius esse, est facere fugiat nemo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores delectus dolore doloribus, dolorum ea eaque eius esse, est facere fugiat nemo.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores delectus dolore doloribus, dolorum ea eaque eius esse, est facere fugiat nemo, omnis perspiciatis quasi quis sed suscipit ullam. Totam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam aliquid assumenda, culpa cumque eos, excepturi expedita illum ipsum laborum mollitia obcaecati odio, officia quisquam ratione sint suscipit tenetur voluptates
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="home__sidebar">
+                    <ul class="home__options">
+                        <li class="home__option">
+                            <div class="home__option-title">Length</div>
+                            <div class="checkbox">
+                                <input id="short" type="radio" class="checkbox__input checkbox__input--radio" name="length">
+                                <label for="short" class="checkbox__label">Short</label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="medium" type="radio" class="checkbox__input checkbox__input--radio" name="length" checked>
+                                <label for="medium" class="checkbox__label">Medium</label>
+                            </div>
+                            <div class="checkbox checkbox--no-m">
+                                <input id="long" type="radio" class="checkbox__input checkbox__input--radio" name="length">
+                                <label for="long" class="checkbox__label">Long</label>
+                            </div>
+                        </li>
+                        <li class="home__option">
+                            <div class="home__option-title home__option-title--violet">Style</div>
+                            <div class="checkbox">
+                                <input id="first-person" type="radio" class="checkbox__input checkbox__input--radio" name="style" checked>
+                                <label for="first-person" class="checkbox__label">First Person</label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="third-person" type="radio" class="checkbox__input checkbox__input--radio" name="style">
+                                <label for="third-person" class="checkbox__label">Third Person</label>
+                            </div>
+                        </li>
+                        <li class="home__option">
+                            <div class="home__option-title home__option-title--blue">Code</div>
+                            <div class="checkbox">
+                                <input id="rendered" type="radio" class="checkbox__input checkbox__input--radio" name="code" checked>
+                                <label for="rendered" class="checkbox__label">Rendered</label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="html" type="radio" class="checkbox__input checkbox__input--radio" name="code">
+                                <label for="html" class="checkbox__label">HTML</label>
+                            </div>
+                            <div class="checkbox checkbox--no-m">
+                                <input id="markdown" type="radio" class="checkbox__input checkbox__input--radio" name="code">
+                                <label for="markdown" class="checkbox__label">Markdown</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
     <section class="home__section home__section--gradient">
         <div class="container">
             <h2 class="title title--white">Skills and Interests</h2>
+            <div class="home__blocks">
+                <div class="home__block">
+                    <div class="home__block-title">Core</div>
+                    <ul class="home__block-list">
+                        <li>HTML</li>
+                        <li>CSS / SASS</li>
+                        <li>Javascript</li>
+                        <li>PHP</li>
+                        <li>MySQL</li>
+                        <li>Mobile / Responsive Design</li>
+                        <li>UX / UI Design</li>
+                    </ul>
+                </div>
+                <div class="home__block">
+                    <div class="home__block-title home__block-title--neon">Librairies</div>
+                    <ul class="home__block-list">
+                        <li>Gulp</li>
+                        <li>Wordpress</li>
+                        <li>Foundation, Bootstrap, Materialize</li>
+                        <li>Jquery</li>
+                        <li>Greensock, Scroll Magic</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
+    <div class="cta">
+        <div class="container">
+            <div class="cta__text">
+                <p>Need A Website?</p>
+                <span>Got a website idea or need a update to an existing site?</span>
+            </div>
+            <div class="cta__button">
+                <a href="#" class="button button--white-outline">Get In Touch</a>
+            </div>
+        </div>
+    </div>
     <section class="home__section">
         <img src="<?=get_stylesheet_directory_uri()?>/src/images/about-bg.jpg" alt="" class="home__code-bg">
         <div class="container">
