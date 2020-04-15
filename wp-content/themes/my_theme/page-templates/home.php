@@ -162,7 +162,7 @@
             </div>
         </div>
     </section>
-    <div class="cta">
+    <section class="cta">
         <div class="container">
             <div class="cta__text">
                 <p>Need A Website?</p>
@@ -172,7 +172,7 @@
                 <a href="#" class="button button--white-outline">Get In Touch</a>
             </div>
         </div>
-    </div>
+    </section>
     <section class="home__section home__section--project">
         <img src="<?=get_stylesheet_directory_uri()?>/src/images/about-bg.jpg" alt="" class="home__code-bg">
         <div class="container">
@@ -183,32 +183,38 @@
                     <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <a href="#" class="project__item">
+                            <a href="#" class="project__item project__item--ecommerce">
                                 <div class="project__image">
+                                    <span class="project__tag">E-commerce</span>
                                     <div class="image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/project-placeholder.jpg') 50% 50% / cover no-repeat"></div>
                                 </div>
                                 <span class="project__title">Lenny and pals</span>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#" class="project__item">
+                            <a href="#" class="project__item project__item--design">
                                 <div class="project__image">
+                                    <span class="project__tag">Design</span>
                                     <div class="image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/image-coming-soon.jpg') 50% 50% / cover no-repeat"></div>
                                 </div>
                                 <span class="project__title">Project Title To Go Here</span>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#" class="project__item">
+                            <a href="#" class="project__item project__item--brochure">
                                 <div class="project__image">
+                                    <span class="project__tag">Brochure</span>
                                     <div class="image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/image-coming-soon.jpg') 50% 50% / cover no-repeat"></div>
                                 </div>
                                 <span class="project__title">Lenny and pals</span>
                             </a>
                         </div>
                     </div>
-                    <!-- If we need pagination -->
+
                     <div class="swiper-pagination"></div>
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
 
                 </div>
             </div>
@@ -219,7 +225,6 @@
         <div class="container">
             <div class="site-slider site-slider__reviews">
                 <div class="swiper-wrapper">
-                    <?php for($i = 0; $i < 3; $i++) : ?>
                     <div class="swiper-slide">
                         <div class="review">
                             <div class="review__icon">
@@ -233,7 +238,19 @@
                             <div class="review__name">Lennyandpals</div>
                         </div>
                     </div>
-                    <?php endfor; ?>
+                    <div class="swiper-slide">
+                        <div class="review">
+                            <div class="review__icon">
+                                <img src="<?=get_stylesheet_directory_uri()?>/src/images/quote-icon.svg" alt="">
+                            </div>
+                            <div class="review__text">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab at aut consequuntur obcaecati sunt. Ab accusamus, aliquam at, consequatur dolor excepturi ipsum maxime molestiae placeat quia quisquam quo sed veritatis.
+                                </p>
+                            </div>
+                            <div class="review__name">This is a company name</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="swiper-pagination"></div>
@@ -245,16 +262,130 @@
         <img src="<?=get_stylesheet_directory_uri()?>/src/images/about-bg.jpg" alt="" class="home__code-bg">
         <div class="container">
             <h2 class="title">Latest Blogs</h2>
+            <div class="home__text home__text--center dynamic">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+            <div class="home__blogs">
+                <div class="home__blog-article">
+                    <div class="article__item">
+                        <a href="#"></a>
+                        <div class="article__image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/blog-image.jpg') 50% 50% / cover no-repeat"></div>
+                        <div class="article__box">
+                            <div class="article__tags">
+                                <a href="#">Tag</a>
+                                <a href="#">Tag</a>
+                                <a href="#">Tag</a>
+                                <a href="#">Tag</a>
+                                <a href="#">Tag</a>
+                            </div>
+                            <a href="#" class="article__title">This is a blog headline</a>
+                            <ul class="article__options">
+                                <li class="article__option" data-fa-icon="&#xf406">Dan Reeves</li>
+                                <li class="article__option" data-fa-icon="&#xf073">30/04/2020</li>
+                                <li class="article__option" data-fa-icon="&#xf017">5 min read</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="home__blog-article">
+                    <div class="article__item">
+                        <a href="#"></a>
+                        <div class="article__image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/blog-image.jpg') 50% 50% / cover no-repeat"></div>
+                        <div class="article__box">
+                            <div class="article__tags">
+                                <a href="#">Tag</a>
+                                <a href="#">Tag</a>
+                                <a href="#">Tag</a>
+                                <a href="#">Tag</a>
+                                <a href="#">Tag</a>
+                            </div>
+                            <a href="#" class="article__title">This is a blog headline</a>
+                            <ul class="article__options">
+                                <li class="article__option" data-fa-icon="&#xf406">Dan Reeves</li>
+                                <li class="article__option" data-fa-icon="&#xf073">30/04/2020</li>
+                                <li class="article__option" data-fa-icon="&#xf017">5 min read</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="home__blog-article">
+                    <div class="article__item">
+                        <a href="#"></a>
+                        <div class="article__image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/blog-image.jpg') 50% 50% / cover no-repeat"></div>
+                        <div class="article__box">
+                            <div class="article__tags">
+                                <a href="#">Tag</a>
+                                <a href="#">Tag</a>
+                                <a href="#">Tag</a>
+                                <a href="#">Tag</a>
+                                <a href="#">Tag</a>
+                            </div>
+                            <a href="#" class="article__title">This is a blog headline</a>
+                            <ul class="article__options">
+                                <li class="article__option" data-fa-icon="&#xf406">Dan Reeves</li>
+                                <li class="article__option" data-fa-icon="&#xf073">30/04/2020</li>
+                                <li class="article__option" data-fa-icon="&#xf017">5 min read</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="home__section home__section--grey-gradient">
         <img src="<?=get_stylesheet_directory_uri()?>/src/images/about-bg.jpg" alt="" class="home__code-bg">
         <div class="container">
             <h2 class="title">Get In Touch</h2>
-
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <div class="home__text home__text--center dynamic">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+            <form action="" class="form">
+                <div class="form__group">
+                    <label for="" class="form__label">Full Name</label>
+                    <input id="" type="text" class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="" class="form__label">Email</label>
+                    <input id="" type="email" class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="" class="form__label">Phone Number</label>
+                    <input id="" type="number" class="form__input form__input--no-spinner">
+                </div>
+                <div class="form__group">
+                    <label for="" class="form__label">Company Name <span>(Optional)</span></label>
+                    <input id="" type="text" class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="" class="form__label">Subject</label>
+                    <input id="" type="text" class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="" class="form__label">Website <span>(If you have one)</span></label>
+                    <input id="" type="text" class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="" class="form__label">Tell Me About Your Project</label>
+                    <textarea id="" class="form__textarea" ></textarea>
+                </div>
+                <ul class="form__options">
+                    <li>
+                        <div class="checkbox checkbox--no-m">
+                            <input type="checkbox" class="checkbox__input">
+                            <label for="" class="checkbox__label">
+                                I consent to having this website store my submitted information so they can respond to my enquiry. We respect your privacy. Your information will never be shared
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <submit class="button" value="Submit" type="submit"><span>Submit</span></submit>
+                    </li>
+                </ul>
+            </form>
         </div>
     </section>
 </main>

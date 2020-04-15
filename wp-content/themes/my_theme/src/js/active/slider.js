@@ -2,15 +2,19 @@ var mySwiper = new Swiper ('.swiper-container', {
     spaceBetween: 15,
     direction: 'horizontal',
     slidesPerView: 1,
-    loop: true,
     breakpoints: {
         640: {
             slidesPerView: 2,
         },
         850: {
             slidesPerView: 3,
+            loop: false,
         },
-    }
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 
     // // If we need pagination
     // pagination: {
@@ -24,6 +28,7 @@ var reviewSlide = new Swiper ('.site-slider__reviews', {
 
     autoplay: {
         delay: 3500,
+        speed: 1000,
         disableOnInteraction: false,
     },
 

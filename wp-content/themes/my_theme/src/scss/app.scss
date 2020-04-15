@@ -24,6 +24,7 @@ $fa-font-path: "../fonts/webfonts" !default;
 @import "components/site-hamburger";
 @import "components/checkbox";
 @import "components/site-slider";
+@import "components/form";
 
 //partials
 @import "partials/header";
@@ -36,3 +37,4 @@ $fa-font-path: "../fonts/webfonts" !default;
 //Pages
 @import "page-templates/home";
 @import "page-templates/project";
+@import "page-templates/articles";

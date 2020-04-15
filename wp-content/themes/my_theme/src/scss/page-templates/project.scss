@@ -15,6 +15,45 @@
                     }
                 }
             }
+
+            #{$self}__tag {
+                top: 0;
+                transition: ease, 0.5s;
+            }
+        }
+
+        &--ecommerce {
+            #{$self}__tag {
+                background-color: $neon;
+            }
+
+            &:hover {
+                #{$self}__title {
+                    color: $neon;
+                }
+            }
+        }
+        &--design {
+            #{$self}__tag {
+                background-color: $purple;
+            }
+
+            &:hover {
+                #{$self}__title {
+                    color: $purple;
+                }
+            }
+        }
+        &--brochure {
+            #{$self}__tag {
+                background-color: $red;
+            }
+
+            &:hover {
+                #{$self}__title {
+                    color: $red;
+                }
+            }
         }
     }
 
@@ -55,5 +94,25 @@
         color: $coal;
         @include fluid-type($min_width, $max_width, 30px, 40px);
         text-align: center;
+
+        transition: ease, 0.5s;
+    }
+
+    &__tag {
+        width: rem-calc(150);
+        text-align: center;
+        background-color: $blue;
+        font-family: $body;
+        font-size: rem-calc(20);
+        line-height: rem-calc(25);
+        font-weight: 500;
+        color: #fff;
+        border-radius: rem-calc(0 0 20 20);
+        position: absolute;
+        top: rem-calc(-50);
+        left: rem-calc(20);
+        padding: rem-calc(8 15);
+        z-index: 3;
+        transition: ease, 0.5s;
     }
 }
