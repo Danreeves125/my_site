@@ -10,6 +10,7 @@
     }
 
     &__label {
+        width: calc(100% - 23px);
         font-family: $body;
         color: $coal;
         font-size: rem-calc(16);
@@ -23,7 +24,7 @@
     }
 
     &__input {
-        $size: 24px;
+        $size: 23px;
         appearance: none;
         -webkit-appearance: none;
         width: $size;
@@ -39,7 +40,9 @@
 
         &:after {
             content: '';
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: $size;
             height: $size;
             position: absolute;
@@ -65,7 +68,6 @@
             color: #fff;
             border: 0;
             text-align: center;
-            padding: rem-calc(7 1 0 1);
         }
 
         &--radio {
@@ -73,8 +75,8 @@
 
             &:checked:after {
                 content: '';
-                width: rem-calc(16);
-                height: rem-calc(16);
+                width: rem-calc(15);
+                height: rem-calc(15);
                 padding: 0;
             }
         }

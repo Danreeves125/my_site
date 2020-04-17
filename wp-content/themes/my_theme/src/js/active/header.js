@@ -32,4 +32,20 @@ if(document.querySelector('body').getAttribute('data-page') === 'home') {
     }
 }
 
-// const tobi = new Tobi();
+let bioStyle = Array.from(document.querySelectorAll('.home__option-title'));
+
+for (let i = 0, l = bioStyle.length; i < l; i++) {
+    bioStyle[i].onclick = function() {
+        for (let j = 0; j < l; j++) {
+            if (bioStyle[j] != this) {
+                bioStyle[j].parentElement.classList.remove("active");
+            }
+        }
+        this.parentElement.classList.toggle('active');
+    }
+}
+
+var scroll = new SmoothScroll('a[href*="#"]', {
+    offset: 82,
+    speed: 500
+});

@@ -44,6 +44,7 @@ function scripts() {
         // 'node_modules/tippy.js/dist/tippy.cjs.js',
         // 'node_modules/@rqrauhvmra/tobi/js/tobi.min.js',
         // 'node_modules/choices.js/public/assets/scripts/choices.js',
+        'node_modules/smooth-scroll/dist/smooth-scroll.js',
         'node_modules/swiper/js/swiper.js',
         // 'node_modules/swiper/js/swiper.js',
         // 'assets/js/custom/sliders.js',

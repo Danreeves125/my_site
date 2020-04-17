@@ -22,10 +22,10 @@
             </a>
             <nav class="header__navigation" role="navigation" aria-label="Main Nav">
                 <ul class="header__nav">
-                    <li class="header__nav-item"><a href="#" title="About Me">About Me</a></li>
-                    <li class="header__nav-item"><a href="#" title="Portfolio">Portfolio</a></li>
-                    <li class="header__nav-item"><a href="#" title="Blog">Blog</a></li>
-                    <li class="header__nav-item"><a href="#" title="Contact">Contact</a></li>
+                    <li class="header__nav-item"><a data-scroll href="#about" title="About Me">About Me</a></li>
+                    <li class="header__nav-item"><a data-scroll href="#portfolio" title="Portfolio">Portfolio</a></li>
+                    <li class="header__nav-item"><a data-scroll href="#blog" title="Blog">Blog</a></li>
+                    <li class="header__nav-item"><a data-scroll href="#contact" title="Contact">Contact</a></li>
                 </ul>
             </nav>
         </div>

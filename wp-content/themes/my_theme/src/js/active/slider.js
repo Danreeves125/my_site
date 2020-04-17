@@ -1,4 +1,4 @@
-var mySwiper = new Swiper ('.swiper-container', {
+var mySwiper = new Swiper ('.site-slider__portfolio', {
     spaceBetween: 15,
     direction: 'horizontal',
     slidesPerView: 1,
@@ -36,4 +36,34 @@ var reviewSlide = new Swiper ('.site-slider__reviews', {
         el: '.swiper-pagination',
         clickable: true,
     },
+});
+
+var statsSlider  = new Swiper ('.home__stats', {
+    spaceBetween: 15,
+    direction: 'horizontal',
+    slidesPerView: 1,
+    loop: true,
+    breakpoints: {
+        450: {
+            slidesPerView: 2,
+        },
+        640: {
+            slidesPerView: 3,
+        },
+        850: {
+            slidesPerView: 4,
+        },
+        1040: {
+            slidesPerView: 5,
+        },
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    // // If we need pagination
+    // pagination: {
+    //     el: '.swiper-pagination',
+    // },
 });

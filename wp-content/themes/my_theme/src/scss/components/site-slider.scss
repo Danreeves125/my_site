@@ -4,6 +4,7 @@
         width: 100%;
         padding: rem-calc(0 15);
         margin-bottom: rem-calc(45);
+        position: relative;
 
         @include breakpoint(medium only) {
             margin-bottom: rem-calc(40);
@@ -45,7 +46,7 @@
         }
 
         .swiper-button-next {
-            right: 0;
+            right: rem-calc(15);
             border-radius: rem-calc(30 0 0 30);
 
             &:before {
@@ -54,7 +55,7 @@
         }
 
         .swiper-button-prev {
-            left: 0;
+            left: rem-calc(15);
             border-radius: rem-calc(0 30 30 0);
 
             &:before {

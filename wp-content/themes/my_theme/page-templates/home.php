@@ -16,7 +16,7 @@
                 <li class="social__item"><a href="#" target="_blank" title="" data-fa-icon="&#xf099"></a></li>
                 <li class="social__item"><a href="#" target="_blank" title="" data-fa-icon="&#xf09b"></a></li>
             </ul>
-            <a href="#" class="button"><span>Get in Touch</span></a>
+            <a data-scroll href="#contact" class="button"><span>Get in Touch</span></a>
         </div>
         <div class="hero__scroll">
             <div class="icon"></div>
@@ -24,41 +24,51 @@
     </section>
     <section class="home__section home__section--p30 home__section--grey">
         <div class="container">
-            <div class="home__stats">
-                <div class="home__stat">
-                    <div class="content">
-                        <div class="icon" data-fa-icon="&#xf7b6"></div>
-                        <p>26 Cups of <br>coffee</p>
+            <div class="home__stats swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide home__stat">
+                        <div class="content">
+                            <div class="icon" data-fa-icon="&#xf7b6"></div>
+                            <p>26 Cups of <br>coffee</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide home__stat">
+                        <div class="content">
+                            <div class="icon" data-fa-icon="&#xf38b"></div>
+                            <p>14 Hours of <br>CSS written</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide home__stat">
+                        <div class="content">
+                            <div class="icon" data-fa-icon="&#xf0a3"></div>
+                            <p>4 Years of <br>experience</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide home__stat">
+                        <div class="content">
+                            <div class="icon" data-fa-icon="&#xf13b"></div>
+                            <p>6 Hours of <br>HTML written</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide home__stat">
+                        <div class="content">
+                            <div class="icon" data-fa-icon="&#xf121"></div>
+                            <p>2000 Lines of <br>code</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide home__stat">
+                        <div class="content">
+                            <div class="icon" data-fa-icon="&#xf121"></div>
+                            <p>2000 Lines of <br>code</p>
+                        </div>
                     </div>
                 </div>
-                <div class="home__stat">
-                    <div class="content">
-                        <div class="icon" data-fa-icon="&#xf38b"></div>
-                        <p>14 Hours of <br>CSS written</p>
-                    </div>
-                </div>
-                <div class="home__stat">
-                    <div class="content">
-                        <div class="icon" data-fa-icon="&#xf0a3"></div>
-                        <p>4 Years of <br>experience</p>
-                    </div>
-                </div>
-                <div class="home__stat">
-                    <div class="content">
-                        <div class="icon" data-fa-icon="&#xf13b"></div>
-                        <p>6 Hours of <br>HTML written</p>
-                    </div>
-                </div>
-                <div class="home__stat">
-                    <div class="content">
-                        <div class="icon" data-fa-icon="&#xf121"></div>
-                        <p>2000 Lines of <br>code</p>
-                    </div>
-                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </section>
-    <section class="home__section">
+    <section id="about" class="home__section">
         <img src="<?=get_stylesheet_directory_uri()?>/src/images/about-bg.jpg" alt="" class="home__code-bg">
         <div class="container">
             <h2 class="title">About Me</h2>
@@ -89,43 +99,49 @@
                     <ul class="home__options">
                         <li class="home__option">
                             <div class="home__option-title">Length</div>
-                            <div class="checkbox">
-                                <input id="short" type="radio" class="checkbox__input checkbox__input--radio" name="length">
-                                <label for="short" class="checkbox__label">Short</label>
-                            </div>
-                            <div class="checkbox">
-                                <input id="medium" type="radio" class="checkbox__input checkbox__input--radio" name="length" checked>
-                                <label for="medium" class="checkbox__label">Medium</label>
-                            </div>
-                            <div class="checkbox checkbox--no-m">
-                                <input id="long" type="radio" class="checkbox__input checkbox__input--radio" name="length">
-                                <label for="long" class="checkbox__label">Long</label>
+                            <div class="home__option-contain">
+                                <div class="checkbox">
+                                    <input id="short" type="radio" class="checkbox__input checkbox__input--radio" name="length">
+                                    <label for="short" class="checkbox__label">Short</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input id="medium" type="radio" class="checkbox__input checkbox__input--radio" name="length" checked>
+                                    <label for="medium" class="checkbox__label">Medium</label>
+                                </div>
+                                <div class="checkbox checkbox--no-m">
+                                    <input id="long" type="radio" class="checkbox__input checkbox__input--radio" name="length">
+                                    <label for="long" class="checkbox__label">Long</label>
+                                </div>
                             </div>
                         </li>
                         <li class="home__option">
                             <div class="home__option-title home__option-title--violet">Style</div>
-                            <div class="checkbox">
-                                <input id="first-person" type="radio" class="checkbox__input checkbox__input--radio" name="style" checked>
-                                <label for="first-person" class="checkbox__label">First Person</label>
-                            </div>
-                            <div class="checkbox">
-                                <input id="third-person" type="radio" class="checkbox__input checkbox__input--radio" name="style">
-                                <label for="third-person" class="checkbox__label">Third Person</label>
+                            <div class="home__option-contain home__option-contain--violet">
+                                <div class="checkbox">
+                                    <input id="first-person" type="radio" class="checkbox__input checkbox__input--radio" name="style" checked>
+                                    <label for="first-person" class="checkbox__label">First Person</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input id="third-person" type="radio" class="checkbox__input checkbox__input--radio" name="style">
+                                    <label for="third-person" class="checkbox__label">Third Person</label>
+                                </div>
                             </div>
                         </li>
                         <li class="home__option">
                             <div class="home__option-title home__option-title--blue">Code</div>
-                            <div class="checkbox">
-                                <input id="rendered" type="radio" class="checkbox__input checkbox__input--radio" name="code" checked>
-                                <label for="rendered" class="checkbox__label">Rendered</label>
-                            </div>
-                            <div class="checkbox">
-                                <input id="html" type="radio" class="checkbox__input checkbox__input--radio" name="code">
-                                <label for="html" class="checkbox__label">HTML</label>
-                            </div>
-                            <div class="checkbox checkbox--no-m">
-                                <input id="markdown" type="radio" class="checkbox__input checkbox__input--radio" name="code">
-                                <label for="markdown" class="checkbox__label">Markdown</label>
+                            <div class="home__option-contain home__option-contain--blue">
+                                <div class="checkbox">
+                                    <input id="rendered" type="radio" class="checkbox__input checkbox__input--radio" name="code" checked>
+                                    <label for="rendered" class="checkbox__label">Rendered</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input id="html" type="radio" class="checkbox__input checkbox__input--radio" name="code">
+                                    <label for="html" class="checkbox__label">HTML</label>
+                                </div>
+                                <div class="checkbox checkbox--no-m">
+                                    <input id="markdown" type="radio" class="checkbox__input checkbox__input--radio" name="code">
+                                    <label for="markdown" class="checkbox__label">Markdown</label>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -169,54 +185,50 @@
                 <span>Got a website idea or need a update to an existing site?</span>
             </div>
             <div class="cta__button">
-                <a href="#" class="button button--white-outline">Get In Touch</a>
+                <a data-scroll href="#contact" class="button button--white-outline">Get In Touch</a>
             </div>
         </div>
     </section>
-    <section class="home__section home__section--project">
+    <section id="portfolio" class="home__section home__section--project">
         <img src="<?=get_stylesheet_directory_uri()?>/src/images/about-bg.jpg" alt="" class="home__code-bg">
         <div class="container">
             <h2 class="title">Portfolio</h2>
             <div class="site-slider site-slider__portfolio">
-                <div class="swiper-container">
-                    <!-- Additional required wrapper -->
-                    <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="swiper-slide">
-                            <a href="#" class="project__item project__item--ecommerce">
-                                <div class="project__image">
-                                    <span class="project__tag">E-commerce</span>
-                                    <div class="image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/project-placeholder.jpg') 50% 50% / cover no-repeat"></div>
-                                </div>
-                                <span class="project__title">Lenny and pals</span>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="#" class="project__item project__item--design">
-                                <div class="project__image">
-                                    <span class="project__tag">Design</span>
-                                    <div class="image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/image-coming-soon.jpg') 50% 50% / cover no-repeat"></div>
-                                </div>
-                                <span class="project__title">Project Title To Go Here</span>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="#" class="project__item project__item--brochure">
-                                <div class="project__image">
-                                    <span class="project__tag">Brochure</span>
-                                    <div class="image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/image-coming-soon.jpg') 50% 50% / cover no-repeat"></div>
-                                </div>
-                                <span class="project__title">Lenny and pals</span>
-                            </a>
-                        </div>
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <a href="#" class="project__item project__item--ecommerce">
+                            <div class="project__image">
+                                <span class="project__tag">E-commerce</span>
+                                <div class="image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/project-placeholder.jpg') 50% 50% / cover no-repeat"></div>
+                            </div>
+                            <span class="project__title">Lenny and pals</span>
+                        </a>
                     </div>
-
-                    <div class="swiper-pagination"></div>
-
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-
+                    <div class="swiper-slide">
+                        <a href="#" class="project__item project__item--design">
+                            <div class="project__image">
+                                <span class="project__tag">Design</span>
+                                <div class="image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/image-coming-soon.jpg') 50% 50% / cover no-repeat"></div>
+                            </div>
+                            <span class="project__title">Project Title To Go Here</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="project__item project__item--brochure">
+                            <div class="project__image">
+                                <span class="project__tag">Brochure</span>
+                                <div class="image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/image-coming-soon.jpg') 50% 50% / cover no-repeat"></div>
+                            </div>
+                            <span class="project__title">Lenny and pals</span>
+                        </a>
+                    </div>
                 </div>
+
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
             <a href="#" class="button"><span>View More</span></a>
         </div>
@@ -258,7 +270,7 @@
             </div>
         </div>
     </section>
-    <section class="home__section">
+    <section id="blog" class="home__section">
         <img src="<?=get_stylesheet_directory_uri()?>/src/images/about-bg.jpg" alt="" class="home__code-bg">
         <div class="container">
             <h2 class="title">Latest Blogs</h2>
@@ -334,7 +346,7 @@
             </div>
         </div>
     </section>
-    <section class="home__section home__section--grey-gradient">
+    <section id="contact" class="home__section home__section--grey-gradient">
         <img src="<?=get_stylesheet_directory_uri()?>/src/images/about-bg.jpg" alt="" class="home__code-bg">
         <div class="container">
             <h2 class="title">Get In Touch</h2>
@@ -343,6 +355,13 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
             </div>
+            <div class="home__subtitle">Where to find me:</div>
+            <ul class="social">
+                <li class="social__item social__item--violet"><a href="#" target="_blank" title="" data-fa-icon="&#xf0e1"></a></li>
+                <li class="social__item social__item--violet"><a href="#" target="_blank" title="" data-fa-icon="&#xf099"></a></li>
+                <li class="social__item social__item--violet"><a href="#" target="_blank" title="" data-fa-icon="&#xf09b"></a></li>
+            </ul>
+            <div class="home__subtitle">Or fill in the contact form.</div>
             <form action="" class="form">
                 <div class="form__group">
                     <label for="" class="form__label">Full Name</label>
@@ -375,8 +394,8 @@
                 <ul class="form__options">
                     <li>
                         <div class="checkbox checkbox--no-m">
-                            <input type="checkbox" class="checkbox__input">
-                            <label for="" class="checkbox__label">
+                            <input id="consent" type="checkbox" class="checkbox__input">
+                            <label for="consent" class="checkbox__label">
                                 I consent to having this website store my submitted information so they can respond to my enquiry. We respect your privacy. Your information will never be shared
                             </label>
                         </div>

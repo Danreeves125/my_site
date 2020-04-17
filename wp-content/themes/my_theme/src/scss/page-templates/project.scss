@@ -94,7 +94,7 @@
         color: $coal;
         @include fluid-type($min_width, $max_width, 30px, 40px);
         text-align: center;
-
+        font-weight: bold;
         transition: ease, 0.5s;
     }
 

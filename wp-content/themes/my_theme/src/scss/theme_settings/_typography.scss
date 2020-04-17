@@ -67,10 +67,11 @@
         font-weight: 400;
         margin-bottom: rem-calc(10);
 
-        $max_font: 55px;
-        $min_font: 40px;
+        @include fluid-type($min_width, $max_width, 16px, 18px);
 
-        @include fluid-type($min_width, $max_width, $min_font - 28px, $max_font - 37px);
+        @include breakpoint(small only) {
+            line-height: rem-calc(22);
+        }
 
         &:last-child {
             margin-bottom: 0;
