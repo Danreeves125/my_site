@@ -11,6 +11,7 @@
     overflow: hidden;
     padding: rem-calc(2);
     transition: ease, 0.5s;
+    cursor: pointer;
 
     span {
         padding: rem-calc(11 37);
@@ -36,6 +37,32 @@
         &:hover {
             background-color: #fff;
             color: $neon;
+        }
+    }
+
+    &--purple-outline {
+        border: rem-calc(2) solid $purple;
+        background: transparent;
+        color: $purple;
+        padding: rem-calc(11 37);
+
+        &:hover {
+            background-color: $purple;
+            color: #fff;
+        }
+
+        &:after {
+            color: #fff;
+        }
+    }
+
+    &--icon {
+        &:after {
+            content: '\f077';
+            font-family: $fa;
+            color: $purple;
+            font-weight: 900;
+            margin-left: rem-calc(15);
         }
     }
 }

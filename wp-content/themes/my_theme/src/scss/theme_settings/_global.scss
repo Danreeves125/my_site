@@ -7,6 +7,16 @@
     }
 }
 
+.spacer {
+    width: 100%;
+    height: rem-calc(82);
+    transition: ease, 0.5s;
+
+    @include breakpoint(850 down) {
+        height: rem-calc(65);
+    }
+}
+
 html {
     &.mobile-menu-open {
         overflow: hidden;

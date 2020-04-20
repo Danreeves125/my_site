@@ -42,7 +42,8 @@
     }
 
     &__input,
-    &__textarea {
+    &__textarea,
+    &__select {
         width: 100%;
         height: rem-calc(50);
         border-radius: rem-calc(5);
@@ -63,6 +64,10 @@
     &__textarea {
         height: rem-calc(150);
         padding-top: rem-calc(25);
+    }
+
+    &__select {
+        padding: 0;
     }
 
     &__options {

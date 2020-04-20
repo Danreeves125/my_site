@@ -9,17 +9,18 @@ var gulp         = require('gulp'),
     watch        = require('gulp-watch'),
     errorHandler = require('gulp-error-handle'),
     sourcemaps = require('gulp-sourcemaps'),
-    ext_replace  = require('gulp-ex-replace'),
+    ext_replace  = require('gulp-ext-replace'),
     babel  = require('gulp-babel');
 
-// function change() {
-//     return gulp.src([
-//         // "node_modules/overlayscrollbars/css/OverlayScrollbars.css",
-//         'node_modules/normalize.css/normalize.css',
-//     ])
-//         .pipe(ext_replace('.scss'))
-//         .pipe(gulp.dest('src/scss/node-imports'))
-// }
+function change() {
+    return gulp.src([
+        // "node_modules/overlayscrollbars/css/OverlayScrollbars.css",
+        'node_modules/choices.js/public/assets/styles/choices.css',
+        // 'node_modules/normalize.css/normalize.css',
+    ])
+        .pipe(ext_replace('.scss'))
+        .pipe(gulp.dest('src/scss/node-imports'))
+}
 
 function fontAwesome() {
     return gulp.src(
@@ -43,7 +44,7 @@ function scripts() {
         // 'node_modules/jquery-parallax.js/parallax.js',
         // 'node_modules/tippy.js/dist/tippy.cjs.js',
         // 'node_modules/@rqrauhvmra/tobi/js/tobi.min.js',
-        // 'node_modules/choices.js/public/assets/scripts/choices.js',
+        'node_modules/choices.js/public/assets/scripts/choices.js',
         'node_modules/smooth-scroll/dist/smooth-scroll.js',
         'node_modules/swiper/js/swiper.js',
         // 'node_modules/swiper/js/swiper.js',
@@ -68,9 +69,9 @@ function watchFiles() {
 gulp.task('scripts', scripts);
 gulp.task('styles', styles);
 gulp.task('fontAwesome', fontAwesome);
-// gulp.task('change', change);
+gulp.task('change', change);
 
-gulp.task('default', gulp.parallel(scripts, styles, fontAwesome));
+gulp.task('default', gulp.parallel(change, scripts, styles, fontAwesome));
 
 gulp.task("watch", function () {
     watchFiles()

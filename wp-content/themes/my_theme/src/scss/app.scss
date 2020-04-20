@@ -9,6 +9,8 @@ $fa-font-path: "../fonts/webfonts" !default;
 
 @import '../../node_modules/swiper/swiper';
 
+@import 'node-imports/choices';
+
 @import "theme_settings/rem-calc";
 @import "theme_settings/normalise";
 @import "theme_settings/fonts";
@@ -25,6 +27,8 @@ $fa-font-path: "../fonts/webfonts" !default;
 @import "components/checkbox";
 @import "components/site-slider";
 @import "components/form";
+@import "components/pagination";
+@import "components/choices";
 
 //partials
 @import "partials/header";
@@ -33,6 +37,7 @@ $fa-font-path: "../fonts/webfonts" !default;
 @import "partials/mobile-menu";
 @import "partials/cta-banner";
 @import "partials/review";
+@import "partials/breadcrumbs";
 
 //Pages
 @import "page-templates/home";

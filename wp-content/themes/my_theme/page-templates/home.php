@@ -195,7 +195,6 @@
             <h2 class="title">Portfolio</h2>
             <div class="site-slider site-slider__portfolio">
                 <div class="swiper-wrapper">
-                    <!-- Slides -->
                     <div class="swiper-slide">
                         <a href="#" class="project__item project__item--ecommerce">
                             <div class="project__image">
@@ -230,7 +229,7 @@
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
-            <a href="#" class="button"><span>View More</span></a>
+            <a href="<?=site_url()?>/portfolio" class="button"><span>View More</span></a>
         </div>
     </section>
     <section class="home__section" style="background: linear-gradient(230deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/review-bg.jpg') 50% 50% / cover no-repeat">

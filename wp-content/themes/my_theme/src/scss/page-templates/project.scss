@@ -1,5 +1,8 @@
 .project {
     $self: &;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 
     &__item {
         display: flex;
@@ -88,11 +91,26 @@
         }
     }
 
+    &__text {
+        width: 60%;
+        margin: 0 auto rem-calc(30) auto;
+        text-align: center;
+        padding: rem-calc(0 15);
+
+        @include breakpoint(medium only) {
+            width: 80%;
+        }
+
+        @include breakpoint(small only) {
+            width: 100%;
+        }
+    }
+
     &__title {
         width: 100%;
         font-family: $primary;
         color: $coal;
-        @include fluid-type($min_width, $max_width, 30px, 40px);
+        @include fluid-type($min_width, $max_width, 25px, 40px);
         text-align: center;
         font-weight: bold;
         transition: ease, 0.5s;
@@ -114,5 +132,119 @@
         padding: rem-calc(8 15);
         z-index: 3;
         transition: ease, 0.5s;
+    }
+
+    &__buttons {
+        width: 100%;
+        padding: rem-calc(0 15);
+        text-align: center;
+        list-style: none;
+        margin: rem-calc(0 0 50 0);
+        font-size: 0;
+
+        @include breakpoint(medium only) {
+            margin-bottom: rem-calc(40);
+        }
+
+        @include breakpoint(small only) {
+            margin-bottom: rem-calc(30);
+        }
+
+        li {
+            display: inline-block;
+
+            &:not(:last-of-type) {
+                margin-right: rem-calc(15);
+
+                @include breakpoint(485 down) {
+                    margin: rem-calc(0 0 15 0);
+                }
+            }
+
+            @include breakpoint(small only) {
+                line-height: rem-calc(19);
+                font-size: rem-calc(18);
+
+                span {
+                    padding: rem-calc(8 25);
+                }
+            }
+
+            @include breakpoint(485 down) {
+                width: 100%;
+
+                .button {
+                    width: 100%;
+
+                    span {
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+
+    &__button-active {
+        .button {
+            span {
+                background: #fff;
+                color: $blue;
+            }
+        }
+    }
+
+    &__blocks {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: rem-calc(0 7.5);
+    }
+
+    &__block {
+        width: calc(100% / 3);
+        padding: rem-calc(0 7.5);
+        margin-bottom: rem-calc(30);
+
+        @include breakpoint(900 down) {
+            width: calc(100% / 2);
+        }
+
+        @include breakpoint(small only) {
+            width: 100%;
+        }
+    }
+
+    &__options {
+        width: 100%;
+        padding: rem-calc(0 15);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0;
+        margin: rem-calc(50 0 60 0);
+
+        @include breakpoint(medium only) {
+            margin: rem-calc(30 0 40 0);
+        }
+
+        @include breakpoint(small only) {
+            margin: rem-calc(15 0 30 0);
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+
+        li {
+            @include breakpoint(650 down) {
+
+                &:first-of-type {
+                    margin-bottom: rem-calc(15);
+                    width: 100%;
+                }
+            }
+        }
     }
 }
