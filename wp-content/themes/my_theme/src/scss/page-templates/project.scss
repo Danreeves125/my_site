@@ -476,4 +476,147 @@
         }
     }
 
+    &__types {
+        width: 100%;
+        padding: rem-calc(0 15);
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin: rem-calc(0 0 30 0);
+    }
+
+    &__type {
+        display: inline-flex;
+
+
+        &:not(:last-of-type) {
+            margin-right: rem-calc(15);
+        }
+
+        .icon {
+            width: rem-calc(90);
+            height: rem-calc(90);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: rem-calc(5);
+            overflow: hidden;
+            background: $light-grey;
+
+            &.active {
+                background:  linear-gradient(230deg, $red 0%, $blue 100%);
+
+                svg {
+                    fill: #fff;
+                }
+            }
+        }
+    }
+
+    &__example {
+        width: 100%;
+        padding: rem-calc(0 15);
+        margin-bottom: rem-calc(60);
+
+        @include breakpoint(medium only) {
+            margin-bottom: rem-calc(40);
+        }
+
+        @include breakpoint(small only) {
+            margin-bottom: rem-calc(30);
+        }
+
+        .os-scrollbar {
+            width: rem-calc(15);
+            right: rem-calc(5);
+            display: flex;
+            align-items: center;
+
+            .os-scrollbar-track {
+                background-color: #fff;
+                box-shadow: 0px 0px 6px rgba(#000, 0.4);
+                height: 95%;
+
+                
+                .os-scrollbar-handle {
+                    background-color: $blue;
+                }
+            }
+        }
+    }
+    &__desktop {
+
+        .desktop-bar {
+            width: 100%;
+            background-color: $light-grey;
+            border-radius: rem-calc(5 5 0 0);
+            height: rem-calc(30);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: rem-calc(0 25);
+
+            .icons {
+                margin: 0;
+                list-style: none;
+                font-size: 0;
+
+                .icon {
+                    border-radius: 50%;
+                    width: rem-calc(15);
+                    height: rem-calc(15);
+                    display: inline-flex;
+                    position: relative;
+
+                    span {
+                        width: rem-calc(5);
+                        height: rem-calc(5);
+                        display: block;
+                        background-color: $coal;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 47%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    &:not(:last-of-type) {
+                        margin-right: rem-calc(5);
+                    }
+                    
+                    &:first-of-type {
+                        background-color: #FF5853;
+                    }
+
+                    &:nth-of-type(2){
+                        background-color: #FFB438;
+                    }
+
+                    &:last-of-type {
+                        background-color: #00C13E;
+                    }
+                }
+            }
+        }
+
+        .inner {
+            width: 100%;
+            max-height: rem-calc(550);
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(#000, 0.20);
+            border-radius: rem-calc(0 0 5 5);
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+    &__tablet {
+
+    }
+    &__mobile {
+
+    }
+
 }

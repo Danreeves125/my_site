@@ -54,6 +54,49 @@
             </div>
         </div>
     </section>
+    <section class="project__section project__section--padding-t-b">
+        <div class="container">
+            <ul class="project__types">
+                <li class="project__type">
+                    <div class="icon active">
+                        <?=file_get_contents(get_stylesheet_directory_uri() . '/src/images/desktop-icon.svg')?>
+                    </div>
+                </li>
+                <li class="project__type">
+                    <div class="icon">
+                        <?=file_get_contents(get_stylesheet_directory_uri() . '/src/images/tablet-icon.svg')?>
+                    </div>
+                </li>
+                <li class="project__type">
+                    <div class="icon">
+                        <?=file_get_contents(get_stylesheet_directory_uri() . '/src/images/phone-icon.svg')?>
+                    </div>
+                </li>
+            </ul>
+            <div class="project__example">
+                <div class="project__desktop">
+                    <div class="desktop-bar">
+                        <ul class="icons">
+                            <li class="icon">
+                                <span></span>
+                            </li>
+                            <li class="icon"></li>
+                            <li class="icon"></li>
+                        </ul>
+                    </div>
+                    <div id="desktop" class="inner">
+                        <img src="<?=get_stylesheet_directory_uri()?>/src/images/desktop.jpg" alt="">
+                    </div>
+                </div>
+<!--                <div class="project__tablet">-->
+<!--                    <img src="--><?//=get_stylesheet_directory_uri()?><!--/src/images/desktop.jpg" alt="">-->
+<!--                </div>-->
+<!--                <div class="project__mobile">-->
+<!--                    <img src="--><?//=get_stylesheet_directory_uri()?><!--/src/images/desktop.jpg" alt="">-->
+<!--                </div>-->
+            </div>
+        </div>
+    </section>
     <section class="project__section project__section--padding" style="background: linear-gradient(230deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/review-bg.jpg') 50% 50% / cover no-repeat">
         <div class="container">
             <div class="site-slider site-slider__reviews">

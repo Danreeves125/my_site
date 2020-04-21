@@ -10,6 +10,7 @@ $fa-font-path: "../fonts/webfonts" !default;
 @import '../../node_modules/swiper/swiper';
 
 @import 'node-imports/choices';
+@import 'node-imports/OverlayScrollbars';
 
 @import "theme_settings/rem-calc";
 @import "theme_settings/normalise";

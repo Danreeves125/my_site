@@ -16,6 +16,7 @@ function change() {
     return gulp.src([
         // "node_modules/overlayscrollbars/css/OverlayScrollbars.css",
         'node_modules/choices.js/public/assets/styles/choices.css',
+        'node_modules/overlayscrollbars/css/OverlayScrollbars.css',
         // 'node_modules/normalize.css/normalize.css',
     ])
         .pipe(ext_replace('.scss'))
@@ -45,6 +46,7 @@ function scripts() {
         // 'node_modules/tippy.js/dist/tippy.cjs.js',
         // 'node_modules/@rqrauhvmra/tobi/js/tobi.min.js',
         'node_modules/choices.js/public/assets/scripts/choices.js',
+        'node_modules/overlayscrollbars/js/OverlayScrollbars.js',
         'node_modules/smooth-scroll/dist/smooth-scroll.js',
         'node_modules/swiper/js/swiper.js',
         // 'node_modules/swiper/js/swiper.js',
