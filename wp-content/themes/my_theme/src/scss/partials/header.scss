@@ -28,7 +28,29 @@
     }
 
     &--state2 {
+         box-shadow: 0 3px 11px rgba(#000, 0.20);
+
+         &:before {
+             opacity: 1;
+             visibility: visible;
+         }
+
+         #{$self}__logo {
+             span {
+                 color: #fff;
+             }
+         }
+
+         #{$self}__nav-item {
+             &:before {
+                 background-color: #fff;
+             }
+         }
+     }
+
+    &--scrolled {
         box-shadow: 0 3px 11px rgba(#000, 0.20);
+        padding: rem-calc(15 0);
 
         &:before {
             opacity: 1;
@@ -36,14 +58,20 @@
         }
 
         #{$self}__logo {
-            span {
-                color: #fff;
-            }
+            font-size: rem-calc(30);
+            line-height: rem-calc(30);
         }
-        
+
         #{$self}__nav-item {
+            font-size: rem-calc(22);
+            line-height: rem-calc(22);
+
+            &:not(:last-of-type) {
+                margin-right: rem-calc(30);
+            }
+
             &:before {
-                background-color: #fff;
+                bottom: rem-calc(-5);
             }
         }
     }

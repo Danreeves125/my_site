@@ -40,6 +40,16 @@
         }
     }
 
+    &--icon {
+        &:after {
+            content: '\f077';
+            font-family: $fa;
+            color: $purple;
+            font-weight: 900;
+            margin-left: rem-calc(15);
+        }
+    }
+
     &--purple-outline {
         border: rem-calc(2) solid $purple;
         background: transparent;
@@ -49,20 +59,10 @@
         &:hover {
             background-color: $purple;
             color: #fff;
-        }
 
-        &:after {
-            color: #fff;
-        }
-    }
-
-    &--icon {
-        &:after {
-            content: '\f077';
-            font-family: $fa;
-            color: $purple;
-            font-weight: 900;
-            margin-left: rem-calc(15);
+            &:after {
+                color: #fff;
+            }
         }
     }
 }

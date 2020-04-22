@@ -32,6 +32,26 @@ if(document.querySelector('body').getAttribute('data-page') === 'home') {
     }
 }
 
+if(document.querySelector('body').getAttribute('data-page') !== 'home') {
+    window.addEventListener('scroll', checkPosition);
+
+    function checkPosition() {
+        let windowY = window.scrollY;
+        if (windowY > 0) {
+            nav.classList.add('header--scrolled');
+        } else {
+            nav.classList.remove('header--scrolled');
+        }
+        scrollPos = windowY;
+    }
+
+    if (window.scrollY > 0) {
+        nav.classList.add('header--scrolled');
+    } else {
+        nav.classList.remove('header--scrolled');
+    }
+}
+
 let bioStyle = Array.from(document.querySelectorAll('.home__option-title'));
 
 for (let i = 0, l = bioStyle.length; i < l; i++) {

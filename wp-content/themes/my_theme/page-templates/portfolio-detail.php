@@ -57,24 +57,24 @@
     <section class="project__section project__section--padding-t-b">
         <div class="container">
             <ul class="project__types">
-                <li class="project__type">
-                    <div class="icon active">
+                <li id="desktop-button" class="project__type active">
+                    <div class="icon">
                         <?=file_get_contents(get_stylesheet_directory_uri() . '/src/images/desktop-icon.svg')?>
                     </div>
                 </li>
-                <li class="project__type">
+                <li id="tablet-button" class="project__type">
                     <div class="icon">
                         <?=file_get_contents(get_stylesheet_directory_uri() . '/src/images/tablet-icon.svg')?>
                     </div>
                 </li>
-                <li class="project__type">
+                <li id="mobile-button" class="project__type">
                     <div class="icon">
                         <?=file_get_contents(get_stylesheet_directory_uri() . '/src/images/phone-icon.svg')?>
                     </div>
                 </li>
             </ul>
-            <div class="project__example">
-                <div class="project__desktop">
+            <div class="project__examples">
+                <div id="desktop-block" class="project__example project__example--desktop active">
                     <div class="desktop-bar">
                         <ul class="icons">
                             <li class="icon">
@@ -88,12 +88,22 @@
                         <img src="<?=get_stylesheet_directory_uri()?>/src/images/desktop.jpg" alt="">
                     </div>
                 </div>
-<!--                <div class="project__tablet">-->
-<!--                    <img src="--><?//=get_stylesheet_directory_uri()?><!--/src/images/desktop.jpg" alt="">-->
-<!--                </div>-->
-<!--                <div class="project__mobile">-->
-<!--                    <img src="--><?//=get_stylesheet_directory_uri()?><!--/src/images/desktop.jpg" alt="">-->
-<!--                </div>-->
+                <div id="tablet-block" class="project__example project__example--tablet">
+                    <div class="tablet-wrapper">
+                        <div id="tablet" class="tablet">
+                            <img src="<?=get_stylesheet_directory_uri()?>/src/images/tablet.jpg" alt="">
+                        </div>
+                        <div class="icon"></div>
+                    </div>
+                </div>
+                <div id="mobile-block" class="project__example project__example--mobile">
+                    <div class="phone-wrapper">
+                        <div id="mobile" class="phone">
+                            <img src="<?=get_stylesheet_directory_uri()?>/src/images/mobile.jpg" alt="">
+                        </div>
+                        <div class="icon"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

@@ -488,9 +488,18 @@
     &__type {
         display: inline-flex;
 
-
         &:not(:last-of-type) {
             margin-right: rem-calc(15);
+        }
+
+        &.active {
+           .icon {
+               background:  linear-gradient(230deg, $red 0%, $blue 100%);
+
+               svg {
+                   fill: #fff;
+               }
+           }
         }
 
         .icon {
@@ -503,21 +512,14 @@
             border-radius: rem-calc(5);
             overflow: hidden;
             background: $light-grey;
-
-            &.active {
-                background:  linear-gradient(230deg, $red 0%, $blue 100%);
-
-                svg {
-                    fill: #fff;
-                }
-            }
         }
     }
 
-    &__example {
+    &__examples {
         width: 100%;
         padding: rem-calc(0 15);
-        margin-bottom: rem-calc(60);
+        margin: rem-calc(0 0 60 0);
+        list-style: none;
 
         @include breakpoint(medium only) {
             margin-bottom: rem-calc(40);
@@ -538,85 +540,193 @@
                 box-shadow: 0px 0px 6px rgba(#000, 0.4);
                 height: 95%;
 
-                
+
                 .os-scrollbar-handle {
                     background-color: $blue;
                 }
             }
         }
     }
-    &__desktop {
 
-        .desktop-bar {
-            width: 100%;
-            background-color: $light-grey;
-            border-radius: rem-calc(5 5 0 0);
-            height: rem-calc(30);
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding: rem-calc(0 25);
+    &__example {
+        display: none;
+        margin: 0 auto;
 
-            .icons {
-                margin: 0;
-                list-style: none;
-                font-size: 0;
+        &.active {
+            display: block;
+        }
 
-                .icon {
-                    border-radius: 50%;
-                    width: rem-calc(15);
-                    height: rem-calc(15);
-                    display: inline-flex;
-                    position: relative;
+        &--desktop {
+            .desktop-bar {
+                width: 100%;
+                background-color: $light-grey;
+                border-radius: rem-calc(5 5 0 0);
+                height: rem-calc(30);
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: rem-calc(0 25);
 
-                    span {
-                        width: rem-calc(5);
-                        height: rem-calc(5);
-                        display: block;
-                        background-color: $coal;
+                .icons {
+                    margin: 0;
+                    list-style: none;
+                    font-size: 0;
+
+                    .icon {
                         border-radius: 50%;
-                        position: absolute;
-                        top: 47%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                    }
+                        width: rem-calc(15);
+                        height: rem-calc(15);
+                        display: inline-flex;
+                        position: relative;
 
-                    &:not(:last-of-type) {
-                        margin-right: rem-calc(5);
-                    }
-                    
-                    &:first-of-type {
-                        background-color: #FF5853;
-                    }
+                        span {
+                            width: rem-calc(5);
+                            height: rem-calc(5);
+                            display: block;
+                            background-color: $coal;
+                            border-radius: 50%;
+                            position: absolute;
+                            top: 47%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
 
-                    &:nth-of-type(2){
-                        background-color: #FFB438;
-                    }
+                        &:not(:last-of-type) {
+                            margin-right: rem-calc(5);
+                        }
 
-                    &:last-of-type {
-                        background-color: #00C13E;
+                        &:first-of-type {
+                            background-color: #FF5853;
+                        }
+
+                        &:nth-of-type(2){
+                            background-color: #FFB438;
+                        }
+
+                        &:last-of-type {
+                            background-color: #00C13E;
+                        }
                     }
+                }
+            }
+
+            .inner {
+                width: 100%;
+                max-height: rem-calc(450);
+                overflow: hidden;
+                box-shadow: 0 3px 8px rgba(#000, 0.20);
+                border-radius: rem-calc(0 0 5 5);
+
+                img {
+                    width: 100%;
                 }
             }
         }
 
-        .inner {
+        &--tablet {
+            width: rem-calc(768);
+
+            .tablet-wrapper {
+                width: 100%;
+                background-color: $light-grey;
+                border-radius: rem-calc(10);
+                padding: rem-calc(20 15 30 15);
+                position: relative;
+
+                .icon {
+                    width: rem-calc(20);
+                    height: rem-calc(20);
+                    background-color: #fff;
+                    border-radius: 50%;
+                    position: absolute;
+                    bottom: rem-calc(5);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+
+                    &:before {
+                        content:'';
+                        width: rem-calc(8);
+                        height: rem-calc(8);
+                        display: block;
+                        border: rem-calc(1) solid $dark-grey;
+                        position: absolute;
+                        bottom: rem-calc(5);
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+
+            .tablet {
+                width: 100%;
+                height: rem-calc(450);
+                overflow: hidden;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &--mobile {}
+    }
+
+    &__tablet {
+    }
+
+    &__mobile {
+        width: rem-calc(340);
+        margin: 0 auto;
+
+        .phone-wrapper {
             width: 100%;
-            max-height: rem-calc(550);
+            background-color: $light-grey;
+            border-radius: rem-calc(10);
+            padding: rem-calc(20 10 30 10);
+            position: relative;
+
+            .icon {
+                width: rem-calc(20);
+                height: rem-calc(20);
+                background-color: #fff;
+                border-radius: 50%;
+                position: absolute;
+                bottom: rem-calc(5);
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+
+                &:before {
+                    content:'';
+                    width: rem-calc(8);
+                    height: rem-calc(8);
+                    display: block;
+                    border: rem-calc(1) solid $dark-grey;
+                    position: absolute;
+                    bottom: rem-calc(5);
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+
+        .phone {
+            width: 100%;
+            height: rem-calc(500);
             overflow: hidden;
-            box-shadow: 0 3px 8px rgba(#000, 0.20);
-            border-radius: rem-calc(0 0 5 5);
 
             img {
                 width: 100%;
             }
         }
-    }
-    &__tablet {
-
-    }
-    &__mobile {
-
     }
 
 }
