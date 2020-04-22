@@ -59,6 +59,23 @@
 }
 
 .dynamic {
+
+    h2, h3 {
+        font-family: $primary;
+        color: $coal;
+        font-weight:bold;
+        margin: rem-calc(25 0);
+    }
+
+    h2 {
+        @include fluid-type($min_width, $max_width, 30px, 35px);
+    }
+
+    h3 {
+        @include fluid-type($min_width, $max_width, 25px, 30px);
+        font-style: italic;
+    }
+
     p, ul {
         font-family: $body;
         color: $coal;

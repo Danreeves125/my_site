@@ -1,0 +1,1 @@
+new universalParallax().init();
