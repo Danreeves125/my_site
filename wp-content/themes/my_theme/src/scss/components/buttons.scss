@@ -40,6 +40,24 @@
         }
     }
 
+    &--white {
+        background: #fff;
+
+        span {
+            background: #fff;
+            color: $blue;
+        }
+    }
+
+    &--small {
+        line-height: rem-calc(20);
+        font-size: rem-calc(20);
+
+        span {
+            padding: rem-calc(7 25);
+        }
+    }
+
     &--icon {
         &:after {
             content: '\f077';

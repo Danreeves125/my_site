@@ -12,6 +12,7 @@ $fa-font-path: "../fonts/webfonts" !default;
 
 @import 'node-imports/choices';
 @import 'node-imports/OverlayScrollbars';
+@import 'node-imports/prism';
 
 @import "theme_settings/rem-calc";
 @import "theme_settings/normalise";
