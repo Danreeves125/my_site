@@ -1,0 +1,347 @@
+form {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form {
+    $height: 50px;
+    $margin: 10px;
+
+    &--newsletter {
+        width: calc(100% - 334px);
+        padding: rem-calc(0 15 0 30);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include breakpoint(medium down) {
+            width: 100%;
+            padding-left: rem-calc(15);
+        }
+
+        input {
+            width: calc((100% - (30px + 175px)) / 2);
+
+            @include breakpoint(small only) {
+                width: 100%;
+                margin-bottom: rem-calc(15);
+            }
+
+        }
+
+        .btn {
+            width: rem-calc(175);
+            height: $height;
+            padding: rem-calc(10 0);
+            text-align: center;
+
+            @include breakpoint(small only) {
+                width: 100%;
+                height: $height - 5px;
+            }
+        }
+    }
+
+    &__form-group {
+        width: 100%;
+        margin-bottom: rem-calc(15);
+
+        p {
+            font-family: $body;
+            font-size: rem-calc(16);
+            color: $jet;
+            font-weight: 300;
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        &--half {
+            width: calc((100% - 30px) / 2);
+            margin-bottom: rem-calc(15);
+
+            @include breakpoint(small only) {
+                width: 100%;
+            }
+        }
+
+        >  p {
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        .choices {
+            &__inner {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                font-family: $body;
+                color: $jet;
+                background-color: transparent;
+                font-size: rem-calc(16);
+                border: 1px solid darken($grey, 10%);
+                box-shadow: none;
+                opacity: 1;
+                margin-bottom: 0;
+                padding: rem-calc(0 0 0 25)!important;
+                height: rem-calc($height);
+                text-overflow: ellipsis;
+                overflow: hidden;
+                border-radius: rem-calc(5);
+
+                @include breakpoint(small only) {
+                    padding-left: rem-calc(15px) !important;
+                }
+            }
+
+            &__list {
+                &--single {
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding: 0;
+                }
+
+                &--dropdown {
+                    .choices__item--selectable.is-highlighted {
+                        background: rgb(81,214,255);
+                        background: linear-gradient(45deg, rgba(81,214,255,1) 0%, rgba(97,125,255,1) 100%);
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    &__label {
+        width: 100%;
+        font-family: $primary;
+        color: $jet;
+        font-weight: 600;
+        font-size: rem-calc(20);
+        line-height: rem-calc(20);
+        margin-bottom: rem-calc(15);
+    }
+
+    &__input,
+    &__textarea {
+        width: 100%;
+        font-family: $body;
+        color: $jet;
+        background-color: transparent;
+        font-size: rem-calc(16);
+        border: 1px solid darken($grey, 10%);
+        box-shadow: none;
+        opacity: 1;
+        margin-bottom: 0;
+        padding: rem-calc(0 25);
+        height: rem-calc($height);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        border-radius: rem-calc(5);
+
+        @include breakpoint(small only) {
+            height: $height - 5px;
+            padding: rem-calc(0 15);
+        }
+
+        &:focus {
+            border: 1px solid $secondary-colour;
+            box-shadow: none;
+            background-color: transparent;
+        }
+
+        @include placeholder() {
+            font-family: $body;
+            color: $jet;
+            font-size: rem-calc(16);
+            opacity: 1;
+            font-style: italic;
+        }
+        
+        &--white {
+            color: #fff;
+
+            @include placeholder() {
+                color: #fff;
+            }
+
+            &:focus {
+                border-color: #fff;
+            }
+        }
+
+    }
+
+    &__input {
+        -moz-appearance: textfield;
+
+        &--no-spinner {
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+
+        &--hidden {
+            width: 100%;
+            left: 0;
+            top: 0;
+            border: 0;
+            opacity: 0;
+            position: absolute;
+            cursor: pointer;
+            height: rem-calc($height);
+            padding-left: rem-calc(25);
+
+            @include breakpoint(small only) {
+                height: 100%;
+            }
+        }
+    }
+
+    &__textarea {
+        height: $height * 3;
+        padding-top: rem-calc(15);
+        border-radius: rem-calc(5);
+    }
+
+    &__upload {
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: rem-calc(10);
+
+        @include breakpoint(small only) {
+            flex-wrap: wrap;
+
+            p {
+                width: 100%;
+            }
+        }
+
+        .btn {
+            height: $height;
+        }
+
+        .wpcf7-form-control-wrap {
+            position: initial;
+        }
+
+        .upload {
+            width: 100%;
+            padding-right: rem-calc(15);
+
+            @include breakpoint(small only) {
+                padding: 0;
+                margin-bottom: rem-calc(15);
+            }
+        }
+    }
+
+    &__options {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+        list-style: none;
+        font-size: 0;
+
+        @include breakpoint(small only) {
+            flex-wrap: wrap;
+        }
+
+        li {
+
+            @include breakpoint(small only) {
+                width: 100%;
+            }
+
+            label {
+                width: 100%;
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                input[type="checkbox"] {
+                    margin: 0;
+                    $size: 20px;
+                    appearance: none;
+                    -webkit-appearance: none;
+                    width: $size;
+                    height: $size;
+                    @include center(false, true);
+                    left: 0;
+                    background-color: #fff;
+                    border: ($size / 15) solid $grey;
+                    border-radius: 5px;
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        width: $size;
+                        height: $size;
+                        position: absolute;
+                        color: #fff;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        -webkit-transform: translate(-50%, -50%);
+                        -moz-transform: translate(-50%, -50%);
+                        -ms-transform: translate(-50%, -50%);
+                        -o-transform: translate(-50%, -50%);
+                        border-radius: inherit;
+                        -webkit-border-radius: inherit;
+                        -moz-border-radius: inherit;
+                    }
+
+                    &:checked:after {
+                        background-color: $secondary-colour;
+                        font-family: $fa;
+                        font-weight: 900;
+                        font-size: rem-calc(13);
+                        content: '\f00c';
+                        color: #fff;
+                        border: 0;
+                        text-align: center;
+                        padding: rem-calc(3 1 0 1);
+                    }
+
+                }
+
+                .wpcf7-list-item-label {
+                    font-family: $body;
+                    color: $jet;
+                    font-size: rem-calc(16);
+                    line-height: rem-calc(18);
+                    padding-left: rem-calc(30);
+
+                    @include breakpoint(small only) {
+                        font-size: rem-calc(14);
+                        line-height: rem-calc(16);
+                    }
+                }
+            }
+
+            &:first-of-type {
+                padding-right: rem-calc(15);
+
+                @include breakpoint(small only) {
+                    padding-right: 0;
+                    margin-bottom: rem-calc(15);
+                }
+            }
+        }
+    }
+}

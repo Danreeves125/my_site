@@ -1,0 +1,33 @@
+.dynamic {
+    h1,h2,h3,h4,h5,h6 {
+        font-family: $body;
+        font-weight: 600;
+        color: #fff;
+        font-size: rem-calc(20);
+        line-height: rem-calc(24);
+    }
+
+    p, li {
+        font-family: $body;
+        font-weight: 400;
+        color: #fff;
+        font-size: rem-calc(16);
+        line-height: rem-calc(21);
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    ul, p {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &--black {
+        h1,h2,h3,h4,h5,h6,p, li {
+            color: $jet;
+        }
+    }
+}

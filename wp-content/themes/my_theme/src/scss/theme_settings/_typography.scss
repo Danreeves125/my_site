@@ -1,0 +1,285 @@
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            font-size: $min-font-size;
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
+        }
+    }
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-family: $primary;
+    color: $coal;
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: rem-calc(0 15 30 15);
+    margin: rem-calc(0 0 45 0);
+    position: relative;
+
+    @include breakpoint(small only) {
+        margin-bottom: rem-calc(30);
+        padding-bottom: rem-calc(25);
+    }
+
+    &:before {
+        content: '';
+        width: rem-calc(85);
+        height: rem-calc(6);
+        background: linear-gradient(230deg, $blue 0%, $violet 100%);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &--white {
+        color: #fff;
+
+        &:before {
+            background: $neon;
+        }
+    }
+}
+
+.dynamic {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    h2, h3 {
+        font-family: $primary;
+        color: $coal;
+        font-weight:bold;
+        margin: rem-calc(25 0);
+
+        @include breakpoint(small only) {
+            margin-bottom: rem-calc(15);
+        }
+    }
+
+    h2 {
+        @include fluid-type($min_width, $max_width, 30px, 35px);
+    }
+
+    h3 {
+        @include fluid-type($min_width, $max_width, 25px, 30px);
+        font-style: italic;
+    }
+
+    p, ul, blockquote {
+        font-family: $body;
+        color: $coal;
+        font-weight: 400;
+        margin-bottom: rem-calc(25);
+        @include fluid-type($min_width, $max_width, 16px, 18px);
+        line-height: rem-calc(24);
+
+        @include breakpoint(small only) {
+            margin-bottom: rem-calc(15);
+        }
+
+        a {
+            color: $blue;
+            text-decoration: underline;
+        }
+    }
+
+    blockquote {
+        width: 100%;
+        font-style: italic;
+        padding: rem-calc(0 0 0 15);
+        margin: rem-calc(0 0 25 0);
+        border-left: rem-calc(15) solid $light-grey;
+
+        @include breakpoint(small only) {
+            margin-bottom:rem-calc(15)
+        }
+    }
+
+    ul {
+        margin-left: 0;
+        list-style: none;
+    }
+
+    li {
+        position: relative;
+        padding-left: rem-calc(15);
+
+        &:before {
+            content: '';
+            width: rem-calc(7);
+            height: rem-calc(7);
+            background-color: $neon;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: rem-calc(10);
+        }
+    }
+
+    .photo {
+        margin: rem-calc(5 0 30);
+
+        @include breakpoint(small only) {
+            margin-top:rem-calc(15)
+        }
+
+        figcaption {
+            margin-bottom: 0;
+        }
+
+        img {
+            max-width: 100%;
+            font-size: 0;
+        }
+
+        .figcaption {
+            font-family: $body;
+            color: $dark-grey;
+            font-style: italic;
+            @include fluid-type($min_width, $max_width, 15px, 16px);
+            margin: rem-calc(25 0 0 0);
+            opacity: 1;
+        }
+    }
+
+    .note {
+        width: 100%;
+        margin-bottom: rem-calc(25);
+
+        @include breakpoint(small only) {
+            margin-bottom:rem-calc(15)
+        }
+
+        span {
+            float: left;
+            font-weight: bold;
+            font-family: $body;
+            color: $coal;
+            @include fluid-type($min_width, $max_width, 16px, 18px);
+            line-height: rem-calc(24);
+            margin-right: rem-calc(5);
+        }
+    }
+
+    .plug {
+        width: 100%;
+        font-family: $body;
+        color: $coal;
+        @include fluid-type($min_width, $max_width, 16px, 18px);
+        border-bottom: rem-calc(10) solid $light-grey;
+        padding-bottom: rem-calc(10);
+        margin-top: rem-calc(15);
+        margin-bottom: rem-calc(40);
+
+        @include breakpoint(small only) {
+            margin-bottom: rem-calc(30);
+        }
+    }
+
+    pre {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #202C31;
+        border-radius: rem-calc(10);
+        padding: rem-calc(30);
+        position: relative;
+        margin: rem-calc(5 0 30 0);
+
+        @include breakpoint(small only) {
+            padding: rem-calc(30 15);
+            margin-top: rem-calc(15);
+        }
+
+        * {
+            text-shadow: none;
+        }
+
+        .copy-content {
+            position: absolute;
+            top: rem-calc(15);
+            right: rem-calc(15);
+            opacity: 0;
+            visibility: hidden;
+            transition: ease, 0.5s;
+        }
+
+        &:hover {
+            .copy-content {
+                display: inline-flex;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &.language-html {
+            &:before {
+                content: attr(data-lang);
+                font-family: $body;
+                color: #fff;
+                font-size: rem-calc(12);
+                font-weight: 500;
+                position: absolute;
+                right: rem-calc(15);
+                top: rem-calc(10);
+            }
+
+            code {
+                color: #fff;
+
+                .token {
+                    color: #fff;
+
+                    &.tag {
+                        color: #FC666D;
+                    }
+
+                    &.comment {
+                        color: #45636F;
+                    }
+
+                    &.punctuation {
+                        color: #fff;
+                    }
+
+                    &.attr-name {
+                        color: #FFC560;
+                    }
+
+                    &.attr-value {
+                        color: #B5E681;
+
+                        .punctuation {
+                            color: #B5E681;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    h2, h3, p, ul, pre, blockquote .plug, .note, .photo {
+        &:last-child {
+           margin-bottom: 0;
+        }
+    }
+}

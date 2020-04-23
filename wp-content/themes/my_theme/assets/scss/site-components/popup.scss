@@ -1,0 +1,152 @@
+.popup {
+    width: rem-calc(850);
+    background: none;
+    border: 0;
+
+    @include breakpoint(850 down) {
+        width: 100%;
+        padding: 0;
+    }
+
+    .os-scrollbar-handle {
+        background-color: $red!important;
+    }
+
+    .os-scrollbar-track {
+        background-color: $light-grey!important;
+    }
+
+    &__content {
+        width: 100%;
+        float: left;
+        background-color: #fff;
+        padding: rem-calc(15);
+    }
+
+    &__scroll {
+        width: 100%;
+        float: left;
+        max-height: rem-calc(260);
+        overflow: hidden;
+    }
+
+    &__image {
+        width: 40%;
+        float: left;
+        padding-right: rem-calc(7.5);
+
+        @include breakpoint(700 down) {
+            width: 50%;
+        }
+
+        @include breakpoint(550 down) {
+            width: 100%;
+            padding-right: 0;
+            margin-bottom: rem-calc(15);
+        }
+
+        img {
+            max-width: rem-calc(250);
+            @include center(true, false);
+            position: relative;
+            border-radius: 50%;
+            border: rem-calc(5) solid $red;
+            padding: rem-calc(5);
+
+            @include breakpoint(400 down) {
+                max-width: rem-calc(200)
+            }
+        }
+    }
+
+    &__details {
+        width: 60%;
+        float: left;
+        padding-left: rem-calc(7.5);
+
+        @include breakpoint(700 down) {
+            width: 50%;
+        }
+
+        @include breakpoint(550 down) {
+            width: 100%;
+            padding-left: 0;
+        }
+    }
+
+    &__name {
+        width: 100%;
+        float: left;
+        font-family: $primary;
+        color: $jet;
+        font-size: rem-calc(25);
+        line-height: rem-calc(25);
+        margin-bottom: rem-calc(10);
+    }
+
+    &__list {
+        width: 100%;
+        float: left;
+        margin: rem-calc(0 0 10 0);
+        list-style: none;
+    }
+
+    &__list-item {
+        width: 100%;
+        float: left;
+        font-family: $body;
+        color: $jet;
+        font-size: rem-calc(16);
+        line-height: rem-calc(16);
+        margin-bottom: rem-calc(10);
+
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    &__text {
+        width: 100%;
+        float: left;
+        padding-right: rem-calc(15);
+
+        p {
+            font-family: $body;
+            color: $jet;
+            font-size: rem-calc(15);
+            line-height: rem-calc(20);
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__close {
+        position: absolute;
+        right: rem-calc(5);
+        top: rem-calc(5);
+        width: rem-calc(30);
+        height: rem-calc(30);
+        background-color: $red;
+        cursor: pointer;
+        border-radius: 50%;
+
+        @include breakpoint(700 down) {
+            right: rem-calc(15);
+            top: rem-calc(15);
+        }
+
+        &:before {
+            content: '\f00d';
+            font-family: $fa;
+            color: #fff;
+            font-weight: 900;
+            font-size: rem-calc(25);
+            line-height: rem-calc(25);
+            @include center(true, true);
+        }
+    }
+
+}

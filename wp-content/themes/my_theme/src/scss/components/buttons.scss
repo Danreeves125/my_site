@@ -1,0 +1,86 @@
+.button {
+    display: inline-flex;
+    border-radius: rem-calc(25);
+    line-height: rem-calc(25);
+    font-size: rem-calc(25);
+    font-family: $primary;
+    color: #fff;
+    font-weight: bold;
+    background: linear-gradient(90deg, $blue 0%, $violet 100%);
+    justify-content: center;
+    overflow: hidden;
+    padding: rem-calc(2);
+    transition: ease, 0.5s;
+    cursor: pointer;
+
+    span {
+        padding: rem-calc(11 37);
+        background: linear-gradient(90deg, $blue 0%, $violet 100%);
+        border-radius: inherit;
+        transition: ease, 0.5s;
+    }
+
+    &:hover {
+        color: $blue;
+
+        span {
+            background: #fff;
+        }
+    }
+
+    &--white-outline {
+        border: rem-calc(2) solid #fff;
+        background: transparent;
+        color: #fff;
+        padding: rem-calc(11 37);
+        
+        &:hover {
+            background-color: #fff;
+            color: $neon;
+        }
+    }
+
+    &--white {
+        background: #fff;
+
+        span {
+            background: #fff;
+            color: $blue;
+        }
+    }
+
+    &--small {
+        line-height: rem-calc(20);
+        font-size: rem-calc(20);
+
+        span {
+            padding: rem-calc(7 25);
+        }
+    }
+
+    &--icon {
+        &:after {
+            content: '\f077';
+            font-family: $fa;
+            color: $purple;
+            font-weight: 900;
+            margin-left: rem-calc(15);
+        }
+    }
+
+    &--purple-outline {
+        border: rem-calc(2) solid $purple;
+        background: transparent;
+        color: $purple;
+        padding: rem-calc(11 37);
+
+        &:hover {
+            background-color: $purple;
+            color: #fff;
+
+            &:after {
+                color: #fff;
+            }
+        }
+    }
+}

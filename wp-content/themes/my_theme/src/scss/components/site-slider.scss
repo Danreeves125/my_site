@@ -1,0 +1,108 @@
+.site-slider {
+
+    &__portfolio {
+        width: 100%;
+        padding: rem-calc(0 15);
+        margin-bottom: rem-calc(45);
+        position: relative;
+
+        @include breakpoint(medium only) {
+            margin-bottom: rem-calc(40);
+        }
+
+        @include breakpoint(small only) {
+            margin-bottom: rem-calc(30);
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: rem-calc(30);
+            height: rem-calc(60);
+            background-color: $neon;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            cursor: pointer;
+            opacity: 1;
+            transition: ease, 0.5s;
+
+            &.swiper-button-disabled {
+                opacity: 0;
+                visibility: hidden;
+                transition: ease, 0.5s;
+            }
+
+            &:before {
+                content: '';
+                font-family: $fa;
+                color: #fff;
+                font-weight: 900;
+                font-size: rem-calc(25);
+            }
+        }
+
+        .swiper-button-next {
+            right: rem-calc(15);
+            border-radius: rem-calc(30 0 0 30);
+
+            &:before {
+                content: '\f054';
+            }
+        }
+
+        .swiper-button-prev {
+            left: rem-calc(15);
+            border-radius: rem-calc(0 30 30 0);
+
+            &:before {
+                content: '\f053';
+            }
+        }
+    }
+
+    &__reviews {
+        width: 100%;
+        padding: rem-calc(0 15);
+        overflow: hidden;
+
+        .swiper-wrapper {
+            margin-bottom: rem-calc(60);
+
+            @include breakpoint(medium only) {
+                margin-bottom: rem-calc(40);
+            }
+
+            @include breakpoint(small only) {
+                margin-bottom: rem-calc(30);
+            }
+        }
+
+        .swiper-pagination {
+            width: 100%;
+            display: inline-flex;
+            justify-content: center;
+
+            .swiper-pagination-bullet {
+                width: rem-calc(8);
+                height: rem-calc(8);
+                display: flex;
+                background-color: #fff;
+                border-radius: rem-calc(4);
+                transition: ease, 0.5s;
+
+                &:not(:last-of-type) {
+                    margin-right: rem-calc(10);
+                }
+
+                &.swiper-pagination-bullet-active {
+                    width: rem-calc(30);
+                    background-color: $neon;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+.offcanvas {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background: rgb(81,214,255);
+    background: linear-gradient(45deg, rgba(81,214,255,1) 0%, rgba(97,125,255,1) 100%);
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    transition: ease, 0.5s;
+
+    &__close {
+        cursor: pointer;
+        position: fixed;
+        right: rem-calc(15);
+        top: rem-calc(15);
+        z-index: 10;
+
+        &:before {
+            content: '\f00d';
+            font-family: $fa;
+            font-weight: 900;
+            color: #fff;
+            font-size: rem-calc(30);
+        }
+    }
+
+    &__nav {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 2;
+    }
+
+    &__list {
+        width: 100%;
+        float: left;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__list-item {
+        width: 100%;
+        float: left;
+        font-family: $primary;
+        color: #fff;
+        font-weight: 600;
+        font-size: rem-calc(30);
+        line-height: rem-calc(30);
+        text-transform: uppercase;
+
+        @include breakpoint(small only) {
+            font-size: rem-calc(25);
+            line-height: rem-calc(25);
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: rem-calc(15);
+        }
+
+        a {
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            font-weight: inherit;
+            color: inherit;
+            padding: rem-calc(15);
+            position: relative;
+
+            @include breakpoint(545 down) {
+                padding: rem-calc(10 15);
+            }
+        }
+    }
+}

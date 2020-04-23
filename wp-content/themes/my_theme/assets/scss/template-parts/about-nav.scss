@@ -1,0 +1,70 @@
+.nav {
+    width: 100%;
+    float: left;
+    background-color: $red;
+
+    &__links {
+        @include grid-column(12);
+        margin: 0;
+        list-style: none;
+        font-size: 0;
+
+        @include breakpoint(small only) {
+            padding: 0;
+        }
+    }
+
+    &__link-item {
+        @include grid-column(3, 0);
+        font-family: $primary;
+        color: #fff;
+        font-size: rem-calc(25);
+        line-height: rem-calc(25);
+        height: rem-calc(50);
+        position: relative;
+        border-left: 1px solid #fff;
+
+        @include breakpoint(small only) {
+            font-size: rem-calc(15);
+            line-height: rem-calc(16);
+            text-align: center;
+        }
+
+        &:last-of-type {
+            border-right: 1px solid #fff;
+        }
+
+        a {
+            width: 100%;
+            height: 100%;
+            float: left;
+            font-family: inherit;
+            color: inherit;
+            font-size: inherit;
+            line-height: inherit;
+
+            &:hover {
+                color: $red;
+                background-color: #fff;
+            }
+
+            span {
+                width: 100%;
+                float: left;
+                text-align: center;
+                @include center(true, true);
+
+                @include breakpoint(small only) {
+                    padding: rem-calc(0 15);
+                }
+            }
+        }
+
+        &--active {
+            a {
+                color: $red;
+                background-color: #fff;
+            }
+        }
+    }
+}

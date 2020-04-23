@@ -1,117 +1,47 @@
 <?php
-/**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since 1.0.0
- */
+/* Template Name: Blogs */
 
-get_header();
-?>
-
-<main id="site-content" role="main">
-
-	<?php
-
-	$archive_title    = '';
-	$archive_subtitle = '';
-
-	if ( is_search() ) {
-		global $wp_query;
-
-		$archive_title = sprintf(
-			'%1$s %2$s',
-			'<span class="color-accent">' . __( 'Search:', 'twentytwenty' ) . '</span>',
-			'&ldquo;' . get_search_query() . '&rdquo;'
-		);
-
-		if ( $wp_query->found_posts ) {
-			$archive_subtitle = sprintf(
-				/* translators: %s: Number of search results */
-				_n(
-					'We found %s result for your search.',
-					'We found %s results for your search.',
-					$wp_query->found_posts,
-					'twentytwenty'
-				),
-				number_format_i18n( $wp_query->found_posts )
-			);
-		} else {
-			$archive_subtitle = __( 'We could not find any results for your search. You can give it another try through the search form below.', 'twentytwenty' );
-		}
-	} elseif ( ! is_home() ) {
-		$archive_title    = get_the_archive_title();
-		$archive_subtitle = get_the_archive_description();
-	}
-
-	if ( $archive_title || $archive_subtitle ) {
-		?>
-
-		<header class="archive-header has-text-align-center header-footer-group">
-
-			<div class="archive-header-inner section-inner medium">
-
-				<?php if ( $archive_title ) { ?>
-					<h1 class="archive-title"><?php echo wp_kses_post( $archive_title ); ?></h1>
-				<?php } ?>
-
-				<?php if ( $archive_subtitle ) { ?>
-					<div class="archive-subtitle section-inner thin max-percentage intro-text"><?php echo wp_kses_post( wpautop( $archive_subtitle ) ); ?></div>
-				<?php } ?>
-
-			</div><!-- .archive-header-inner -->
-
-		</header><!-- .archive-header -->
-
-		<?php
-	}
-
-	if ( have_posts() ) {
-
-		$i = 0;
-
-		while ( have_posts() ) {
-			$i++;
-			if ( $i > 1 ) {
-				echo '<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />';
-			}
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
-		}
-	} elseif ( is_search() ) {
-		?>
-
-		<div class="no-search-results-form section-inner thin">
-
-			<?php
-			get_search_form(
-				array(
-					'label' => __( 'search again', 'twentytwenty' ),
-				)
-			);
-			?>
-
-		</div><!-- .no-search-results -->
-
-		<?php
-	}
-	?>
-
-	<?php get_template_part( 'template-parts/pagination' ); ?>
-
-</main><!-- #site-content -->
-
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
-
+get_header(); ?>
 <?php
-get_footer();
+
+$post_id = false;
+
+if( is_home() )
+{
+	$post_id = 58; // specif ID of home page
+}
+$image_id = get_field('page_banner', $post_id);
+$pageSrc = wp_get_attachment_image_src($image_id, "page-banner-image");
+?>
+<?php //if(!empty($image_id)) : ?>
+<!--	<div class="banner">-->
+<!--		<div class="parallax" data-parallax-image="--><?//=$pageSrc[0]?><!--"></div>-->
+<!--	</div>-->
+<?php //endif; ?>
+<main class="article">
+	<section class="page__hero">
+		<div class="container">
+			<div class="page__hero-content">
+				<h1 class="page__title"><?php single_post_title(); ?></h1>
+				<?php
+				if ( function_exists('yoast_breadcrumb') ) {
+					yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
+				}
+				?>
+			</div>
+		</div>
+	</section>
+	<?php if (have_posts()) : ?>
+		<section  class="article__section">
+			<div class="container">
+				<div class="article__articles">
+					<?= do_shortcode('[ajax_load_more id="3873237437" container_type="div" css_classes="article__articles" post_type="post" posts_per_page="6" transition="masonry" masonry_selector=".article__item" masonry_animation="slide-up" images_loaded="true" button_label="Loading More Posts" no_results_text="No More Articles"]')?>
+				</div>
+			</div>
+		</section>
+	<?php else : ?>
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
+	<?php endif; ?>
+</main>
+
+<?php get_footer(); ?>

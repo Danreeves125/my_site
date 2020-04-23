@@ -1,0 +1,82 @@
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    list-style: none;
+
+    @include breakpoint(650 down) {
+        justify-content: center;
+    }
+
+    li {
+
+        @include breakpoint(650 down) {
+
+            &:first-of-type,
+            &:last-of-type {
+                display: none;
+            }
+        }
+
+        &:not(:last-of-type) {
+            margin-right: rem-calc(25);
+
+            @include breakpoint(650 down) {
+                margin: 0;
+            }
+        }
+    }
+
+    .arrow {
+        width: rem-calc(45);
+        height: rem-calc(45);
+        border-radius: 50%;
+        border: rem-calc(2) solid $neon;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:before {
+            font-weight: 900;
+            font-family: $fa;
+            color: $neon;
+            font-size: rem-calc(20);
+        }
+
+        &.next {
+            &:before {
+                content: '\f054'
+            }
+        }
+
+        &.prev {
+            &:before {
+                content: '\f053'
+            }
+        }
+    }
+
+    &__select {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .form__select {
+            width: rem-calc(119);
+            margin: rem-calc(0 15);
+        }
+
+        p {
+            max-width: rem-calc(130);
+            font-family: $body;
+            color: $coal;
+            font-size: rem-calc(20);
+            line-height: rem-calc(20);
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+.site-hamburger {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    cursor: pointer;
+    z-index: 55;
+
+    @include breakpoint(1025 up) {
+        display: none;
+    }
+
+    p {
+        margin: rem-calc(0 8 0 0);
+        font-family: $body;
+        color: #fff;
+        font-size: rem-calc(15);
+        line-height: rem-calc(20);
+        font-weight: 300;
+        transition: ease, 0.5s;
+    }
+
+    &.active {
+        .hamburger {
+            .bar {
+                background-color: #fff;
+
+                &:first-of-type {
+                    width: rem-calc(29);
+                    transform: rotate(-45deg);
+                }
+
+                &:nth-of-type(2) {
+                    width: 0;
+                }
+
+                &:last-of-type {
+                    width: rem-calc(29);
+                    transform: rotate(45deg);
+                    margin-bottom: rem-calc(-3.8);
+                }
+            }
+        }
+    }
+
+    .hamburger {
+        width: rem-calc(29);
+        height: rem-calc(20);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        .bar {
+            height: rem-calc(3);
+            background-color: $secondary-colour;
+            transition: ease, 0.5s;
+            transform-origin: right;
+
+            &:first-of-type {
+                width: rem-calc(29);
+                align-self: flex-start;
+            }
+
+            &:nth-of-type(2) {
+                width: rem-calc(26);
+                align-self: center;
+            }
+
+            &:last-of-type {
+                width: rem-calc(23);
+                align-self: flex-end;
+            }
+        }
+    }
+}

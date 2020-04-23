@@ -1,0 +1,332 @@
+.header {
+    $self: &;
+    width: 100%;
+    position: fixed;
+    z-index: 50;
+    transition: ease, 0.5s;
+
+    &--state2 {
+        background-color: #fff;
+        box-shadow: 0 8px 14px rgba(0,0,0,0.2);
+        
+        .site-hamburger {
+            p {
+                color: #000;
+            }
+        }
+
+        #{$self}__logo {
+            width: rem-calc(90);
+            padding-top: rem-calc(5);
+
+            @include breakpoint(medium only) {
+                width: rem-calc(70);
+            }
+
+            @include breakpoint(small only) {
+                width: rem-calc(60);
+            }
+
+            svg {
+
+                path {
+                    fill: #000;
+                }
+            }
+        }
+
+        #{$self}__side {
+            padding-top: rem-calc(15);
+
+            @include breakpoint(medium down) {
+                padding-top: 0;
+            }
+        }
+
+        #{$self}__navigation {
+            margin-top: rem-calc(10);
+
+            @include breakpoint(medium only) {
+                margin-top: 0;
+            }
+        }
+        
+        .header__email {
+            a {
+                font-size: rem-calc(15);
+                color: #000;
+            }
+        }
+        
+        .header__nav-item {
+            color: #000;
+            font-size: rem-calc(20);
+        }
+
+        .header__option-item {
+            color: #000;
+            font-size: rem-calc(15);
+
+            &:last-of-type {
+                border-color: #000;
+            }
+        }
+    }
+
+    &--hide {
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+    }
+
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: rem-calc(0 15);
+        align-items: flex-start;
+
+        @include breakpoint(medium down) {
+            align-items: center;
+        }
+    }
+
+    &__side {
+        width: rem-calc(410);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-top: rem-calc(25);
+
+        @include breakpoint(medium only) {
+            padding-top: 0;
+            width: rem-calc(200);
+        }
+
+        @include breakpoint(small only) {
+            padding-top: 0;
+            width: rem-calc(100);
+        }
+
+        &:last-of-type {
+            justify-content: flex-end;
+
+            .header__nav {
+                text-align: right;
+            }
+        }
+    }
+
+    &__logo {
+        width: rem-calc(130);
+        border-radius: 50%;
+        padding-top: rem-calc(15);
+        transition: ease, 0.5s;
+
+        @include breakpoint(medium only) {
+            width: rem-calc(90);
+        }
+
+        @include breakpoint(small only) {
+            width: rem-calc(70);
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+
+            path {
+                fill: #fff;
+                transition: ease, 0.5s;
+
+                &.glasses {
+                    fill: $primary-colour;
+                }
+            }
+        }
+    }
+
+    &__navigation {
+        width: 100%;
+        margin-top: rem-calc(15);
+        transition: ease, 0.5s;
+
+        @include breakpoint(medium down) {
+            display: none;
+        }
+    }
+
+    &__nav {
+        width: 100%;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__nav-item {
+        display: inline-block;
+        font-family: $primary;
+        color: #fff;
+        font-size: rem-calc(25);
+        line-height: rem-calc(25);
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: ease, 0.5s;
+
+        &:not(:last-of-type) {
+            margin-right: rem-calc(30);
+        }
+
+        &:hover {
+            a {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        a {
+            font-family: inherit;
+            color: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            position: relative;
+
+            &:before {
+                content: '';
+                width: 0;
+                height: rem-calc(3);
+                background-color: $primary-colour;
+                position: absolute;
+                bottom: rem-calc(-5);
+                left: 50%;
+                transform: translateX(-50%);
+                transition: ease, 0.5s;
+            }
+        }
+    }
+
+    &__email {
+        width: 100%;
+        height: rem-calc(25);
+
+        @include breakpoint(medium down) {
+            display: none;
+        }
+
+        a {
+            width: 100%;
+            position: relative;
+            font-family: $body;
+            font-size: rem-calc(16);
+            line-height: rem-calc(16);
+            font-weight: 600;
+            color: #fff;
+            padding-left: rem-calc(25);
+            transition: ease, 0.5s;
+
+
+            &:hover {
+                color: #fff;
+            }
+
+            &:before {
+                content: '\f0e0';
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                @include center(false, true);
+                left: 0;
+                color: $secondary-colour;
+            }
+        }
+    }
+
+    &__options {
+        width: 100%;
+        height: rem-calc(25);
+        text-align: right;
+        list-style: none;
+        margin: 0;
+        font-size: 0;
+        transition: ease, 0.5s;
+
+        &--desktop {
+            @include breakpoint(medium down) {
+                display: none;
+            }
+        }
+
+        &--mobile {
+            text-align: left;
+            height: auto;
+
+            @include breakpoint(1025 up) {
+                display: none;
+            }
+
+            .header__option-item {
+                span {
+                    @include breakpoint(small only) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__option-item {
+        display: inline-block;
+        font-family: $body;
+        color: #fff;
+        font-size: rem-calc(16);
+        line-height: rem-calc(16);
+        font-weight: 600;
+        transition: ease, 0.5s;
+
+        &:first-of-type {
+            padding-right: rem-calc(15);
+        }
+
+        &:last-of-type {
+            border-left: rem-calc(1) solid #fff;
+            padding-left: rem-calc(15);
+
+            @include breakpoint(small only) {
+                border: 0;
+                padding: 0;
+            }
+        }
+
+        a {
+            display: block;
+            position: relative;
+            float: left;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            color: inherit;
+            padding-left: rem-calc(25);
+
+            @include breakpoint(small only) {
+                padding: 0;
+            }
+
+
+            &:before {
+                content: attr(data-fa);
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                font-size: rem-calc(16);
+                color: $secondary-colour;
+                position: absolute;
+                left: 0;
+
+                @include breakpoint(small only) {
+                    position: relative;
+                    font-size: rem-calc(25);
+                }
+            }
+        }
+    }
+}

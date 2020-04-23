@@ -1,0 +1,49 @@
+html {
+    &.off-canvas-open {
+        overflow: hidden;
+
+        body {
+            overflow: hidden;
+
+
+            .offcanvas {
+                z-index: 45;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.container {
+     @include grid-row();
+ }
+
+.breadcrumbs {
+    width: 100%;
+    text-align: center;
+
+    @include breakpoint(small only) {
+        display: none;
+    }
+
+    span {
+        font-family: $body;
+        color: #fff;
+        font-size: rem-calc(16);
+        line-height: rem-calc(16);
+
+        .breadcrumb_last {
+            text-decoration: underline;
+        }
+
+        a {
+            font-family: $body;
+            color: #fff;
+            font-size: rem-calc(16);
+            line-height: rem-calc(16);
+        }
+
+
+    }
+}

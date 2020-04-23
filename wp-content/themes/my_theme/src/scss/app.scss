@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+$fa-font-path: "../fonts/webfonts" !default;
+
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "../../node_modules/universal-parallax/dist/universal-parallax.scss";
+
+@import '../../node_modules/swiper/swiper';
+
+@import 'node-imports/choices';
+@import 'node-imports/OverlayScrollbars';
+@import 'node-imports/prism';
+
+@import "theme_settings/rem-calc";
+@import "theme_settings/normalise";
+@import "theme_settings/fonts";
+@import "theme_settings/settings";
+@import "theme_settings/mixins";
+@import "theme_settings/typography";
+@import "theme_settings/base";
+@import "theme_settings/global";
+
+//Components
+@import "components/social-icon";
+@import "components/buttons";
+@import "components/site-hamburger";
+@import "components/checkbox";
+@import "components/site-slider";
+@import "components/form";
+@import "components/pagination";
+@import "components/choices";
+
+//partials
+@import "partials/header";
+@import "partials/footer";
+@import "partials/hero";
+@import "partials/mobile-menu";
+@import "partials/cta-banner";
+@import "partials/review";
+@import "partials/breadcrumbs";
+@import "partials/sidebar";
+
+//Pages
+@import "page-templates/home";
+@import "page-templates/project";
+@import "page-templates/articles";

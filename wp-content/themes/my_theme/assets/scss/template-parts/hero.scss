@@ -1,0 +1,75 @@
+.hero {
+    width: 100%;
+    height: 100vh;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+
+    &__content {
+        width: rem-calc(550);
+        float: left;
+        @include center(true, true);
+        top: 58%;
+        position: absolute;
+        z-index: 2;
+        background-color: rgba(#000, 0.7);
+        text-align: center;
+        padding: rem-calc(50 35);
+
+        @include breakpoint(550 down) {
+            padding: rem-calc(30 15);
+            width: calc(100% - 30px);
+            top: 55%;
+        }
+    }
+
+    &__title {
+        font-family: $primary;
+        color: #fff;
+        font-size: rem-calc(35);
+        line-height: rem-calc(40);
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: rem-calc(30);
+
+        @include breakpoint(small only) {
+            font-size: rem-calc(30);
+            line-height: rem-calc(35);
+        }
+    }
+
+    @keyframes heroScroll {
+        50% {
+            top: 13px;
+        }
+
+        100% {
+            top: 5px;
+        }
+    }
+
+    &__scroll {
+        width: rem-calc(17);
+        height: rem-calc(27);
+        float: left;
+        border: rem-calc(2) solid #fff;
+        border-radius: rem-calc(10);
+        @include center(true, false);
+        bottom: rem-calc(24);
+        z-index: 2;
+
+        .icon{
+            width: rem-calc(2);
+            height: rem-calc(5);
+            background-color: #fff;
+            @include center(true, false);
+            top: 6px;
+            transition: ease, 0.5s;
+            animation-name: heroScroll;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+    }
+}

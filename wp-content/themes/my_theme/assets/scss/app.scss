@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+@import "custom_settings";
+@import '../../node_modules/foundation-sites/scss/foundation';
+@import "../../node_modules/motion-ui/motion-ui";
+
+@include foundation-global-styles;
+@include foundation-forms;
+@include foundation-typography;
+
+@include foundation-grid;
+
+// Generic components
+@include foundation-button;
+@include foundation-button-group;
+@include foundation-table;
+@include foundation-callout;
+
+// Containers
+@include foundation-media-object;
+
+// Helpers
+@include foundation-float-classes;
+@include foundation-visibility-classes;
+
+$fa-font-path: "../fonts/webfonts/" !default;
+
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../node_modules/swiper/css/swiper.min";
+
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+@import 'global';
+
+//Node Imports
+@import "node-imports/OverlayScrollbars";
+@import "node-imports/tippy";
+@import "node-imports/tobi.min";
+@import "node-imports/choices";
+
+//Site Components
+@import "site-components/form";
+//@import "site-components/site-sliders";
+//@import "site-components/popup";
+@import "site-components/accordion";
+@import "site-components/buttons";
+@import "site-components/product";
+@import "site-components/site-hamburger";
+@import "site-components/dynamic";
+
+//Template Parts
+@import "template-parts/header";
+@import "template-parts/footer";
+@import "template-parts/social-icon";
+@import "template-parts/newsletter";
+@import "template-parts/new-in";
+@import "template-parts/latest-news";
+@import "template-parts/about-nav";
+@import "template-parts/off-canvas";
+@import "template-parts/hero";
+
+//page-templates
+@import "page-templates/home";
+@import "page-templates/pages";
+@import "page-templates/blogs";
+@import "page-templates/contact-us";
+@import "page-templates/shop";
+@import "page-templates/gallery";
