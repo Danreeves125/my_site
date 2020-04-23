@@ -1,13 +1,13 @@
-const element = document.querySelector('.form__select');
+// const element = document.querySelector('.form__select');
 
-if(element.length) {
-    const choices = new Choices(element);
-}
+// if(element.length > 0) {
+//     const choices = new Choices(element);
+// }
 
 // var instance = OverlayScrollbars(document.getElementById('desktop'));
-OverlayScrollbars(document.getElementById('desktop'), { });
-OverlayScrollbars(document.getElementById('tablet'), { });
-OverlayScrollbars(document.getElementById('mobile'), { });
+// OverlayScrollbars(document.getElementById('desktop'), { });
+// OverlayScrollbars(document.getElementById('tablet'), { });
+// OverlayScrollbars(document.getElementById('mobile'), { });
 // desktop-button
 // tablet-button
 // mobile-button

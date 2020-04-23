@@ -114,5 +114,39 @@
             </div>
         </div>
     </section>
+    <section class="article__section article__section--grey">
+        <div class="container">
+            <div class="title">Related Blog Posts</div>
+            <div class="site-slider site-slider__latest">
+                <div class="swiper-wrapper">
+                    <?php for($i = 0; $i < 3; $i++) : ?>
+                        <div class="swiper-slide">
+                            <div class="article__item">
+                                <a href="#"></a>
+                                <div class="article__image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/blog-image.jpg') 50% 50% / cover no-repeat"></div>
+                                <div class="article__box">
+                                    <div class="article__tags">
+                                        <a href="#">Tag</a>
+                                        <a href="#">Tag</a>
+                                        <a href="#">Tag</a>
+                                        <a href="#">Tag</a>
+                                        <a href="#">Tag</a>
+                                    </div>
+                                    <a href="#" class="article__title">This is a blog headline</a>
+                                    <ul class="article__options">
+                                        <li class="article__option" data-fa-icon="&#xf406">Dan Reeves</li>
+                                        <li class="article__option" data-fa-icon="&#xf073">30/04/2020</li>
+                                        <li class="article__option" data-fa-icon="&#xf017">5 min read</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endfor; ?>
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
 </article>
 <?php get_footer(); ?>

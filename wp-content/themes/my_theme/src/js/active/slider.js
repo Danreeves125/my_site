@@ -38,6 +38,30 @@ var reviewSlide = new Swiper ('.site-slider__reviews', {
     },
 });
 
+var latestBlogs = new Swiper ('.site-slider__latest', {
+    direction: 'horizontal',
+    slidesPerView: 1,
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+        },
+        1040: {
+            slidesPerView: 3,
+        },
+    },
+
+    autoplay: {
+        delay: 3500,
+        speed: 1000,
+        disableOnInteraction: false,
+    },
+
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+
 var statsSlider  = new Swiper ('.home__stats', {
     spaceBetween: 15,
     direction: 'horizontal',
