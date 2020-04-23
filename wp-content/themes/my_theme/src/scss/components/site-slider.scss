@@ -28,6 +28,13 @@
         width: 100%;
         overflow: hidden;
 
+        .swiper-pagination {
+
+            .swiper-pagination-bullet {
+                background-color: $grey;
+            }
+        }
+
         .swiper-wrapper {
             margin-bottom: rem-calc(45);
 

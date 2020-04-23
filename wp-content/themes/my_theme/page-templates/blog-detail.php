@@ -148,5 +148,25 @@
             </div>
         </div>
     </section>
+    <section class="site-pagination">
+        <div class="container">
+            <div class="site-pagination__inner">
+                <a href="#" class="site-pagination__button prev">
+                    <span class="icon" data-fa-icon="&#xf053"></span>
+                    Prev
+                </a>
+                <a class="logo" href="<?=get_site_url()?>">
+                    <span class="square"></span>
+                    <span class="square square--blue"></span>
+                    <span class="square square--violet"></span>
+                    <span class="square square--neon"></span>
+                </a>
+                <a href="#" class="site-pagination__button next">
+                    <span class="icon" data-fa-icon="&#xf054"></span>
+                    Next
+                </a>
+            </div>
+        </div>
+    </section>
 </article>
 <?php get_footer(); ?>
