@@ -17,15 +17,17 @@
     </button>
     <header class="header <?=(get_post_field( 'post_name' ) != 'home') ? 'header--state2' : ''?>">
         <div class="container">
-            <a href="#" class="header__logo">
+            <a href="<?=get_site_url()?>" class="header__logo">
                 Daniel Reeves<span>.</span>
             </a>
             <nav class="header__navigation" role="navigation" aria-label="Main Nav">
                 <ul class="header__nav">
-                    <li class="header__nav-item"><a data-scroll href="#about" title="About Me">About Me</a></li>
+                    <li class="header__nav-item">
+                        <a data-scroll href="<?=(get_post_field( 'post_name' ) == 'home') ? '#about' : get_site_url() . '#about' ?>" title="About Me">About Me</a>
+                    </li>
                     <li class="header__nav-item"><a data-scroll href="#portfolio" title="Portfolio">Portfolio</a></li>
                     <li class="header__nav-item"><a data-scroll href="#blog" title="Blog">Blog</a></li>
-                    <li class="header__nav-item"><a data-scroll href="#contact" title="Contact">Contact</a></li>
+                    <li class="header__nav-item"><a data-scroll href="<?=(get_post_field( 'post_name' ) == 'home') ? '#contact' : get_site_url() . '#contact' ?>" title="Contact">Contact</a></li>
                 </ul>
             </nav>
         </div>

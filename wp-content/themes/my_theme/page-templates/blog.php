@@ -19,7 +19,7 @@
                         <?php for($i = 0; $i < 5; $i++) : ?>
                             <div class="article__block">
                                 <article class="article__item">
-                                    <a href="#"></a>
+                                    <a href="<?=site_url()?>/blog-detail"></a>
                                     <div class="article__image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/blog-image.jpg') 50% 50% / cover no-repeat"></div>
                                     <div class="article__box">
                                         <div class="article__tags">
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <aside class="article__sidebar sidebar">
-                <div class="sidebar__blocks">
+                    <div class="sidebar__blocks">
                     <div class="sidebar__block">
                         <div class="sidebar__title">Recent Posts</div>
                         <ul class="sidebar__posts">
@@ -76,7 +76,7 @@
                         </ul>
                     </div>
                 </div>
-            </aside>
+                </aside>
             </div>
         </div>
     </section>

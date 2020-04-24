@@ -196,7 +196,7 @@
             <div class="site-slider site-slider__portfolio">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <a href="#" class="project__item project__item--ecommerce">
+                        <a href="<?=site_url()?>/portfolio-detail" class="project__item project__item--ecommerce">
                             <div class="project__image">
                                 <span class="project__tag">E-commerce</span>
                                 <div class="image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/project-placeholder.jpg') 50% 50% / cover no-repeat"></div>
@@ -205,7 +205,7 @@
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="project__item project__item--design">
+                        <a href="<?=site_url()?>/portfolio-detail" class="project__item project__item--design">
                             <div class="project__image">
                                 <span class="project__tag">Design</span>
                                 <div class="image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/image-coming-soon.jpg') 50% 50% / cover no-repeat"></div>
@@ -214,7 +214,7 @@
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" class="project__item project__item--brochure">
+                        <a href="<?=site_url()?>/portfolio-detail" class="project__item project__item--brochure">
                             <div class="project__image">
                                 <span class="project__tag">Brochure</span>
                                 <div class="image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/image-coming-soon.jpg') 50% 50% / cover no-repeat"></div>
@@ -269,7 +269,7 @@
             </div>
         </div>
     </section>
-    <section id="blog" class="home__section">
+    <section id="blog" class="home__section home__section--blogs">
         <img src="<?=get_stylesheet_directory_uri()?>/src/images/about-bg.jpg" alt="" class="home__code-bg">
         <div class="container">
             <h2 class="title">Latest Blogs</h2>
@@ -281,7 +281,7 @@
             <div class="home__blogs">
                 <div class="home__blog-article">
                     <div class="article__item">
-                        <a href="#"></a>
+                        <a href="<?=site_url()?>/blog-detail"></a>
                         <div class="article__image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/blog-image.jpg') 50% 50% / cover no-repeat"></div>
                         <div class="article__box">
                             <div class="article__tags">
@@ -302,7 +302,7 @@
                 </div>
                 <div class="home__blog-article">
                     <div class="article__item">
-                        <a href="#"></a>
+                        <a href="<?=site_url()?>/blog-detail"></a>
                         <div class="article__image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/blog-image.jpg') 50% 50% / cover no-repeat"></div>
                         <div class="article__box">
                             <div class="article__tags">
@@ -323,7 +323,7 @@
                 </div>
                 <div class="home__blog-article">
                     <div class="article__item">
-                        <a href="#"></a>
+                        <a href="<?=site_url()?>/blog-detail"></a>
                         <div class="article__image" style="background: url('<?=get_stylesheet_directory_uri()?>/src/images/placeholder/blog-image.jpg') 50% 50% / cover no-repeat"></div>
                         <div class="article__box">
                             <div class="article__tags">
@@ -343,6 +343,7 @@
                     </div>
                 </div>
             </div>
+            <a href="<?=site_url()?>/blog" class="button"><span>View More</span></a>
         </div>
     </section>
     <section id="contact" class="home__section home__section--grey-gradient">

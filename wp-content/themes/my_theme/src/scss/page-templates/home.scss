@@ -35,7 +35,8 @@
             padding: rem-calc(30 0);
         }
 
-        &--project {
+        &--project,
+        &--blogs {
             .container {
                 display: flex;
                 flex-wrap: wrap;
@@ -501,6 +502,15 @@
 
     &__blogs {
         width: 100%;
+        margin-bottom: rem-calc(60);
+
+        @include breakpoint(medium only) {
+            margin-bottom: rem-calc(40);
+        }
+
+        @include breakpoint(small only) {
+            margin-bottom: rem-calc(30);
+        }
 
         @include breakpoint(745 down) {
             display: flex;
